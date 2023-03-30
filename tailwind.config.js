@@ -17,7 +17,7 @@ module.exports = {
       },
       fontFamily: {
         sans: 'var(--font-inter), ui-sans-serif, system-ui, sans-serif',
-        mono: 'Space Mono, ui-monospace, monospace',
+        mono: 'var(--font-space-mono), ui-monospace, monospace',
       },
     },
   },

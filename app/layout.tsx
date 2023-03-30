@@ -13,6 +13,7 @@ const space_mono = Space_Mono({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-space-mono',
 })
 
 export const metadata = {
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${space_mono.className} font-sans`}
+      className={`${inter.variable} ${space_mono.variable} font-sans`}
     >
       <body>{children}</body>
     </html>
