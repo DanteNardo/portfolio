@@ -1,3 +1,5 @@
+import ButtonPrint from './ButtonPrint'
+import ContactLink from './ContactLink'
 import Section from './Section'
 import SectionBody from './SectionBody'
 import SectionHeader from './SectionHeader'
@@ -10,72 +12,88 @@ import SectionItemListItem from './SectionItemListItem'
 import SectionItemParagraph from './SectionItemParagraph'
 import SectionItemSubtitle from './SectionItemSubtitle'
 import SectionSeparator from './SectionSeparator'
+import { FiGithub, FiLinkedin } from 'react-icons/fi'
+import { GoLink, GoMarkGithub } from 'react-icons/go'
 
 export default function Home() {
   return (
     <main
-      className="flex w-screen h-screen max-w-[100vw] max-h-screen p-8 items-start justify-center overflow-auto text-base-500 bg-black"
+      className="flex w-screen h-screen max-w-[100vw] max-h-screen print:p-0 px-8 py-16 items-start justify-center overflow-auto font-sans text-default bg-black print:bg-white"
       style={{ colorScheme: 'dark' }}
     >
-      <div className="flex flex-col w-[816px] h-[1056px] px-12 py-8 rounded border border-base-700 bg-gradient-to-b from-base-900 to-base-950">
-        <div className="w-full pb-12">
-          <h1 className="text-6xl tracking-tighter font-bold text-base-300">
+      <div className="relative flex flex-col w-[816px] h-[1056px] print:p-0 px-8 py-8 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
+        <div className="print:hidden absolute flex top-[-3rem] left-0 right-0 justify-end">
+          <ButtonPrint />
+        </div>
+        <div className="flex w-full gap-8 px-2 pb-12 justify-between">
+          <h1 className="mb-2 text-6xl tracking-tighter font-bold text-focus">
             Dante Nardo
           </h1>
-          <h1 className="text-6xl tracking-tighter font-bold text-base-500">
-            I'm an Engineer
-          </h1>
+          <div className="grid grid-cols-2 gap-1">
+            <ContactLink href="">
+              <GoLink />
+              <span>Portfolio</span>
+            </ContactLink>
+            <ContactLink href="">
+              <GoMarkGithub />
+              <span>GitHub</span>
+            </ContactLink>
+            <ContactLink href="">
+              <FiLinkedin />
+              <span>LinkedIn</span>
+            </ContactLink>
+          </div>
         </div>
-        <div className="flex-auto grid grid-cols-3 gap-12 overflow-hidden">
+        <div className="flex-auto grid grid-cols-3 gap-4 overflow-hidden">
           <Section>
             <SectionHeader>Skills</SectionHeader>
             <SectionSeparator />
             <SectionBody>
-              <SectionItem>
+              <SectionItem href="/skills/programming">
                 <SectionItemHeader>Programming</SectionItemHeader>
                 <SectionItemParagraph>
                   C, C++, C#, JavaScript, TypeScript, Python, Lua
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/frontend">
                 <SectionItemHeader>Frontend</SectionItemHeader>
                 <SectionItemParagraph>
                   React, Next.js, Angular, Blazor, Svelte, Sveltekit, HTML, CSS,
                   SCSS, Tailwind CSS, Vite, Webpack, PostCSS
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/backend">
                 <SectionItemHeader>Backend</SectionItemHeader>
                 <SectionItemParagraph>
-                  REST APIs, NoSQL, SQL, .NET, Node, Deno, Spring Boot
+                  REST, gRPC, NoSQL, SQL, .NET, Node, Deno
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/cloud">
                 <SectionItemHeader>Cloud</SectionItemHeader>
                 <SectionItemParagraph>
                   AWS, Azure, Kubernetes, Docker, Cosmos DB, S3, DynamoDB, Azure
-                  Functions, AWS Lambda
+                  Functions, AWS Lambda, Apache Kafka
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/architecture">
                 <SectionItemHeader>Architecture</SectionItemHeader>
                 <SectionItemParagraph>
-                  OOP, Microservice, Distributed Systems, Event Sourcing, CQRS
+                  OOP, Microservices, Distributed Systems, Event Sourcing, CQRS
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/operating-systems">
                 <SectionItemHeader>Operating Systems</SectionItemHeader>
                 <SectionItemParagraph>
                   Windows, Mac OS, Linux, BASH, WSL, Powershell
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/productivity">
                 <SectionItemHeader>Productivity</SectionItemHeader>
                 <SectionItemParagraph>
                   Git, Perforce, Scrum, Kanban, Jira, GitHub, CI/CD
                 </SectionItemParagraph>
               </SectionItem>
-              <SectionItem>
+              <SectionItem href="/skills/graphics-and-design">
                 <SectionItemHeader>Graphics & Design</SectionItemHeader>
                 <SectionItemParagraph>
                   OpenGL, WebGL, Unity 3D, Direct X, Adobe Suite, Affinity Serif
@@ -88,7 +106,7 @@ export default function Home() {
             <SectionHeader>Education</SectionHeader>
             <SectionSeparator />
             <SectionBody>
-              <SectionItem>
+              <SectionItem href="/education">
                 <SectionItemHeaderHorizontal>
                   <SectionItemHeader>
                     B.S. Game Design & Development
@@ -100,10 +118,37 @@ export default function Home() {
                 </SectionItemParagraph>
               </SectionItem>
             </SectionBody>
-            <SectionHeader className="mt-8">Experience</SectionHeader>
+            <SectionHeader className="mt-6">Experience</SectionHeader>
             <SectionSeparator />
             <SectionBody>
-              <SectionItem>
+              <SectionItem href="/experience/biosero">
+                <SectionItemHeaderHorizontal>
+                  <SectionItemHeader>
+                    Senior Software Engineer
+                  </SectionItemHeader>
+                  <SectionItemSubtitle>at Biosero Inc.</SectionItemSubtitle>
+                  <SectionItemDate>Nov 2020 - Present</SectionItemDate>
+                </SectionItemHeaderHorizontal>
+                <SectionItemList>
+                  <SectionItemListItem>
+                    Developed distributed SAAS cloud platform in Azure that
+                    included multiple licensing models, internal management
+                    portals, and web products for customers.
+                  </SectionItemListItem>
+                  <SectionItemListItem>
+                    Developed and designed three Web Assembly applications.
+                  </SectionItemListItem>
+                  <SectionItemListItem>
+                    Led development and design of the company's component
+                    library.
+                  </SectionItemListItem>
+                  <SectionItemListItem>
+                    Developed multiple REST API gateways and gRPC based
+                    microservices using the event sourcing and CQRS patterns.
+                  </SectionItemListItem>
+                </SectionItemList>
+              </SectionItem>
+              <SectionItem href="/experience/viasat">
                 <SectionItemHeaderHorizontal>
                   <SectionItemHeader>Software Engineer</SectionItemHeader>
                   <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
@@ -124,7 +169,7 @@ export default function Home() {
                   </SectionItemListItem>
                 </SectionItemList>
               </SectionItem>
-              <SectionItem>
+              {/* <SectionItem>
                 <SectionItemHeaderHorizontal>
                   <SectionItemHeader>AR Internship</SectionItemHeader>
                   <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
@@ -142,16 +187,16 @@ export default function Home() {
                     Maps integration.
                   </SectionItemListItem>
                 </SectionItemList>
-              </SectionItem>
+              </SectionItem> */}
             </SectionBody>
-            <SectionHeader className="mt-8">Projects</SectionHeader>
+            <SectionHeader className="mt-6">Projects</SectionHeader>
             <SectionSeparator />
             <SectionBody>
-              <SectionItem>
+              <SectionItem href="/projects/protean">
                 <SectionItemHeaderHorizontal>
                   <SectionItemHeader>Protean</SectionItemHeader>
                   <SectionItemSubtitle>
-                    a Realtime Sveltekit App
+                    a realtime Sveltekit web app
                   </SectionItemSubtitle>
                   <SectionItemDate>2022 - 2023</SectionItemDate>
                 </SectionItemHeaderHorizontal>
@@ -165,8 +210,7 @@ export default function Home() {
                     then send messages and roll virtual dice with other users.
                   </SectionItemListItem>
                   <SectionItemListItem>
-                    Users connected to a game will receive realtime updates
-                    using the Supabase Realtime API.
+                    Users receive realtime updates via websockets.
                   </SectionItemListItem>
                 </SectionItemList>
               </SectionItem>
@@ -183,11 +227,11 @@ export default function Home() {
                   system in the Unity 3D game engine.
                 </SectionItemParagraph>
               </SectionItem> */}
-              <SectionItem>
+              <SectionItem href="/projects/project-colorblind">
                 <SectionItemHeaderHorizontal>
                   <SectionItemHeader>Project Colorblind</SectionItemHeader>
                   <SectionItemSubtitle>
-                    an Experimental Video Game
+                    an experimental video game
                   </SectionItemSubtitle>
                   <SectionItemDate>2018</SectionItemDate>
                 </SectionItemHeaderHorizontal>

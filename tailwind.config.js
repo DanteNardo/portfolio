@@ -16,8 +16,8 @@ module.exports = {
         base: colors.zinc,
       },
       fontFamily: {
-        sans: 'var(--font-inter), ui-sans-serif, system-ui, sans-serif',
-        mono: 'var(--font-space-mono), ui-monospace, monospace',
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-space-mono)', 'ui-monospace', 'monospace'],
       },
     },
   },

@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-default {
+    @apply text-base-500;
+  }
+
+  .text-focus {
+    @apply text-base-300 print:text-black;
+  }
+
+  .action-border {
+    @apply border-2 border-transparent hover:border-white hover:text-focus hover:bg-black focus:border-white focus:text-focus focus:bg-black mst;
+  }
+
+  .action-outline {
+    @apply outline outline-2 outline-offset-[3px] outline-transparent hover:outline-white hover:text-focus hover:bg-black focus:outline-white focus:text-focus focus:bg-black mst;
+  }
+
+  .mst {
+    @apply motion-safe:transition motion-safe:duration-200 motion-safe:ease-in-out;
+  }
+}
