@@ -1,4 +1,4 @@
-import ButtonPrint from './ButtonPrint'
+import ButtonResume from './ButtonPrint'
 import ContactLink from './ContactLink'
 import Section from './Section'
 import SectionBody from './SectionBody'
@@ -21,9 +21,9 @@ export default function Home() {
       className="flex w-screen h-screen max-w-[100vw] max-h-screen print:p-0 px-8 py-16 items-start justify-center overflow-auto font-sans text-default bg-black print:bg-white"
       style={{ colorScheme: 'dark' }}
     >
-      <div className="relative flex flex-col w-[816px] h-[1056px] print:p-0 px-8 py-8 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
+      <div className="relative flex flex-col w-[816px] h-[1056px] print:p-0 px-8 pt-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
         <div className="print:hidden absolute flex top-[-3rem] left-0 right-0 justify-end">
-          <ButtonPrint />
+          <ButtonResume />
         </div>
         <div className="flex w-full gap-8 px-2 pb-12 justify-between">
           <h1 className="mb-2 text-6xl tracking-tighter font-bold text-focus">
@@ -139,8 +139,9 @@ export default function Home() {
                     Developed and designed three Web Assembly applications.
                   </SectionItemListItem>
                   <SectionItemListItem>
-                    Led development and design of the company's component
-                    library.
+                    {
+                      "Led development and design of the company's component library."
+                    }
                   </SectionItemListItem>
                   <SectionItemListItem>
                     Developed multiple REST API gateways and gRPC based
