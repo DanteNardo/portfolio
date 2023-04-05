@@ -4,7 +4,7 @@
 
 @layer utilities {
   .text-default {
-    @apply text-base-500;
+    @apply text-base-500 print:text-base-400;
   }
 
   .text-focus {
@@ -22,4 +22,9 @@
   .mst {
     @apply motion-safe:transition motion-safe:duration-200 motion-safe:ease-in-out;
   }
+}
+
+@page {
+  size: letter;
+  margin: 0;
 }

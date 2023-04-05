@@ -1,5 +1,7 @@
 import ButtonResume from './ButtonPrint'
 import ContactLink from './ContactLink'
+import ContactLinkIcon from './ContactLinkIcon'
+import ContactLinkText from './ContactLinkText'
 import Section from './Section'
 import SectionBody from './SectionBody'
 import SectionHeader from './SectionHeader'
@@ -12,8 +14,8 @@ import SectionItemListItem from './SectionItemListItem'
 import SectionItemParagraph from './SectionItemParagraph'
 import SectionItemSubtitle from './SectionItemSubtitle'
 import SectionSeparator from './SectionSeparator'
-import { FiGithub, FiLinkedin } from 'react-icons/fi'
-import { GoLink, GoMarkGithub } from 'react-icons/go'
+import { FiLinkedin } from 'react-icons/fi'
+import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
 
 export default function Home() {
   return (
@@ -21,27 +23,43 @@ export default function Home() {
       className="flex w-screen h-screen max-w-[100vw] max-h-screen print:p-0 px-8 py-16 items-start justify-center overflow-auto font-sans text-default bg-black print:bg-white"
       style={{ colorScheme: 'dark' }}
     >
-      <div className="relative flex flex-col w-[816px] h-[1056px] print:p-0 px-8 pt-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
+      <div className="relative flex flex-col w-[816px] h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
         <div className="print:hidden absolute flex top-[-3rem] left-0 right-0 justify-end">
           <ButtonResume />
         </div>
         <div className="flex w-full gap-8 px-2 pb-12 justify-between">
-          <h1 className="mb-2 text-6xl tracking-tighter font-bold text-focus">
+          <h1 className="grow text-6xl tracking-tighter font-bold text-focus">
             Dante Nardo
           </h1>
-          <div className="grid grid-cols-2 gap-1">
-            <ContactLink href="">
-              <GoLink />
-              <span>Portfolio</span>
-            </ContactLink>
-            <ContactLink href="">
-              <GoMarkGithub />
-              <span>GitHub</span>
-            </ContactLink>
-            <ContactLink href="">
-              <FiLinkedin />
-              <span>LinkedIn</span>
-            </ContactLink>
+          <div className="shrink flex h-min gap-1">
+            <div className="flex flex-col gap-1">
+              <ContactLink href="https://github.com/TheDolentCity">
+                <ContactLinkIcon>
+                  <GoMarkGithub />
+                </ContactLinkIcon>
+                <ContactLinkText>TheDolentCity</ContactLinkText>
+              </ContactLink>
+              <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
+                <ContactLinkIcon>
+                  <FiLinkedin />
+                </ContactLinkIcon>
+                <ContactLinkText>dante-nardo</ContactLinkText>
+              </ContactLink>
+            </div>
+            <div className="flex flex-col gap-1">
+              <ContactLink href="https://www.google.com/maps/place/San+Diego,+CA/@32.8242405,-117.3891468,10z/data=!3m1!4b1!4m6!3m5!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838!16zL20vMDcxdnI">
+                <ContactLinkIcon>
+                  <GoGlobe />
+                </ContactLinkIcon>
+                <ContactLinkText>San Diego, CA</ContactLinkText>
+              </ContactLink>
+              <ContactLink href="dantenardo.dev">
+                <ContactLinkIcon>
+                  <GoLink />
+                </ContactLinkIcon>
+                <ContactLinkText>https://dantenardo.dev</ContactLinkText>
+              </ContactLink>
+            </div>
           </div>
         </div>
         <div className="flex-auto grid grid-cols-3 gap-4 overflow-hidden">
@@ -139,9 +157,7 @@ export default function Home() {
                     Developed and designed three Web Assembly applications.
                   </SectionItemListItem>
                   <SectionItemListItem>
-                    {
-                      "Led development and design of the company's component library."
-                    }
+                    Led development and design of web component library.
                   </SectionItemListItem>
                   <SectionItemListItem>
                     Developed multiple REST API gateways and gRPC based
