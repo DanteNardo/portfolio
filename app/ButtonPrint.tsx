@@ -10,7 +10,7 @@ export default function ButtonResume({}: {}) {
   return (
     <button
       onClick={print}
-      className="flex gap-2 px-4 py-2 items-center rounded-full leading-none font-medium !text-black !bg-white action-outline mst"
+      className="hidden md:flex gap-2 px-4 py-2 items-center rounded-full leading-none font-medium !text-black !bg-white action-outline mst"
     >
       <GoFilePdf />
       Resume

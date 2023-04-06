@@ -20,19 +20,22 @@ import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
 export default function Home() {
   return (
     <main
-      className="flex w-screen h-screen max-w-[100vw] max-h-screen print:p-0 px-8 py-16 items-start justify-center overflow-auto font-sans text-default bg-black print:bg-white"
+      className="flex flex-col w-screen h-screen max-w-[100vw] max-h-screen gap-4 print:p-0 px-8 py-8 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
       style={{ colorScheme: 'dark' }}
     >
-      <div className="relative flex flex-col w-[816px] h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
-        <div className="print:hidden absolute flex top-[-3rem] left-0 right-0 justify-end">
-          <ButtonResume />
-        </div>
-        <div className="flex w-full gap-8 px-2 pb-12 justify-between">
+      <h3 className="print:hidden block md:hidden w-full px-3 py-1 rounded-full text-xs text-center text-black bg-white">
+        I recommend viewing this site on desktop for a superior experience!
+      </h3>
+      <div className="print:hidden flex md:w-[816px] justify-end">
+        <ButtonResume />
+      </div>
+      <div className="relative flex flex-col md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
+        <div className="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between">
           <h1 className="grow text-6xl tracking-tighter font-bold text-focus">
             Dante Nardo
           </h1>
-          <div className="shrink flex h-min gap-1">
-            <div className="flex flex-col gap-1">
+          <div className="shrink flex h-min gap-0.5">
+            <div className="flex flex-col gap-0.5">
               <ContactLink href="https://github.com/TheDolentCity">
                 <ContactLinkIcon>
                   <GoMarkGithub />
@@ -62,11 +65,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex-auto grid grid-cols-3 gap-4 overflow-hidden">
+        <div className="flex-auto grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-4 overflow-hidden">
           <Section>
             <SectionHeader>Skills</SectionHeader>
             <SectionSeparator />
-            <SectionBody>
+            <SectionBody className="grid grid-cols-2 md:flex print:flex">
               <SectionItem href="/skills/programming">
                 <SectionItemHeader>Programming</SectionItemHeader>
                 <SectionItemParagraph>
@@ -120,8 +123,10 @@ export default function Home() {
               </SectionItem>
             </SectionBody>
           </Section>
-          <Section className="col-span-2">
-            <SectionHeader>Education</SectionHeader>
+          <Section className="md:col-span-2 print:col-span-2">
+            <SectionHeader className="mt-6 md:mt-0 print:mt-0">
+              Education
+            </SectionHeader>
             <SectionSeparator />
             <SectionBody>
               <SectionItem href="/education">
