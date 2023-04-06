@@ -19,6 +19,9 @@ module.exports = {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-space-mono)', 'ui-monospace', 'monospace'],
       },
+      screens: {
+        sm: '480px',
+      },
     },
   },
   plugins: [],

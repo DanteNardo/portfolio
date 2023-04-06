@@ -31,10 +31,10 @@ export default function Home() {
       </div>
       <div className="relative flex flex-col md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
         <div className="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between">
-          <h1 className="grow text-6xl tracking-tighter font-bold text-focus">
+          <h1 className="grow text-5xl md:text-6xl tracking-tighter font-bold text-focus">
             Dante Nardo
           </h1>
-          <div className="shrink flex h-min gap-0.5">
+          <div className="shrink flex flex-col sm:flex-row print:flex-row h-min gap-0.5">
             <div className="flex flex-col gap-0.5">
               <ContactLink href="https://github.com/TheDolentCity">
                 <ContactLinkIcon>
@@ -69,7 +69,7 @@ export default function Home() {
           <Section>
             <SectionHeader>Skills</SectionHeader>
             <SectionSeparator />
-            <SectionBody className="grid grid-cols-2 md:flex print:flex">
+            <SectionBody className="grid grid-cols-1 sm:grid-cols-2 md:flex print:flex">
               <SectionItem href="/skills/programming">
                 <SectionItemHeader>Programming</SectionItemHeader>
                 <SectionItemParagraph>

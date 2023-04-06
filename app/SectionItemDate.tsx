@@ -4,7 +4,7 @@ export default function SectionItemDate({
   children: React.ReactNode
 }) {
   return (
-    <span className="grow text-xs text-right leading-5 font-mono text-base-400">
+    <span className="hidden sm:inline print:inline grow text-xs text-right leading-5 font-mono text-base-400">
       {children}
     </span>
   )
