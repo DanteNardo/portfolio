@@ -1,3 +1,4 @@
+import BackgroundLights from './BackgroundLights'
 import ButtonResume from './ButtonPrint'
 import ContactLink from './ContactLink'
 import ContactLinkIcon from './ContactLinkIcon'
@@ -20,9 +21,10 @@ import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
 export default function Home() {
   return (
     <main
-      className="flex flex-col w-screen h-screen max-w-[100vw] max-h-screen gap-4 print:p-0 px-8 py-8 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
+      className="relative flex flex-col w-screen h-screen max-w-[100vw] max-h-screen gap-2 md:gap-4 print:p-0 p-4 md:p-8 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
       style={{ colorScheme: 'dark' }}
     >
+      <BackgroundLights />
       <h3 className="print:hidden block md:hidden w-full px-3 py-1 rounded-full text-xs text-center text-black bg-white">
         I recommend viewing this site on desktop for a superior experience!
       </h3>
