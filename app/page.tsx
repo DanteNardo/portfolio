@@ -31,7 +31,7 @@ export default function Home() {
       <div className="print:hidden flex md:w-[816px] justify-end">
         <ButtonResume />
       </div>
-      <div className="relative flex flex-col md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950 print:from-white print:to-white">
+      <div className="relative flex flex-col md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950/75 backdrop-blur-lg print:from-white print:to-white">
         <div className="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between">
           <h1 className="grow text-5xl md:text-6xl tracking-tighter font-bold text-focus">
             Dante Nardo

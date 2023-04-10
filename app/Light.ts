@@ -1,6 +1,6 @@
 const PI2: number = Math.PI * 2
-const MinRadius: number = 40
-const MaxRadius: number = 90
+const MinRadius: number = 20
+const MaxRadius: number = 40
 const VelocityModifier: number = 4
 
 export type RGB = { red: number; green: number; blue: number }
@@ -16,9 +16,13 @@ export default class Light {
   sin: number
   rgb: RGB
 
-  constructor(stageWidth: number, stageHeight: number) {
-    this.xBounds = 100 //stageWidth
-    this.yBounds = 100 //stageHeight
+  constructor(
+    stageWidth: number,
+    stageHeight: number,
+    context: CanvasRenderingContext2D | null | undefined,
+  ) {
+    this.xBounds = stageWidth
+    this.yBounds = stageHeight
     this.x = Math.random() * this.xBounds
     this.y = Math.random() * this.yBounds
     this.vx = Math.random() * VelocityModifier
@@ -26,17 +30,19 @@ export default class Light {
     this.radius = Math.random() * (MaxRadius - MinRadius) + MinRadius
     this.sin = Math.random()
     this.rgb = { red: 255, green: 255, blue: 255 }
+
+    this.animate(context)
   }
 
   animate(context: CanvasRenderingContext2D | null | undefined) {
     if (!context) {
-      console.warn('Context is undefined. Cannot animate')
+      console.error('Context is undefined. Cannot animate')
       return
     }
 
-    console.log(JSON.stringify(this))
+    // console.log(JSON.stringify(this))
     this.sin += 0.01
-    this.radius = Math.sin(this.sin)
+    // this.radius *= Math.sin(this.sin)
     this.x += this.vx
     this.y += this.vy
 
@@ -56,11 +62,11 @@ export default class Light {
       this.y -= 10
     }
 
-    console.log('beginPath')
+    // console.log('beginPath')
     context.beginPath()
     context.fillStyle = `rgba(${this.rgb?.red}, ${this.rgb?.green}, ${this.rgb?.blue}, 1)`
     context.arc(this.x, this.y, this.radius, 0, PI2, false)
     context.fill()
-    console.log('fill')
+    // console.log('fill')
   }
 }
