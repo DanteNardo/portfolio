@@ -26,7 +26,6 @@ export const useCanvas = (
 
   useEffect(() => {
     const resize = () => {
-      // console.log('useCanvas|useEffect|resize')
       const canvas = canvasRef?.current
       const context = canvas?.getContext('2d')
 
@@ -38,7 +37,6 @@ export const useCanvas = (
         canvas.height = stageHeight
         context.scale(pixelRatio, pixelRatio)
 
-        // console.log('useCanvas|useEffect|onResize')
         onResize(canvas, context)
       }
     }
@@ -47,19 +45,16 @@ export const useCanvas = (
     resize()
 
     return () => {
-      // console.log('useCanvas|useEffect|return|resize')
       window.removeEventListener('resize', resize)
     }
   }, [])
 
   useEffect(() => {
     const animate = () => {
-      // console.log('useCanvas|useEffect|animate')
       const canvas = canvasRef?.current
       const context = canvas?.getContext('2d')
 
       if (canvas && context) {
-        // console.log('useCanvas|useEffect|onAnimate')
         onAnimate(canvas, context)
       }
     }
@@ -70,7 +65,6 @@ export const useCanvas = (
     }, 1000 / 60)
 
     return () => {
-      // console.log('useCanvas|useEffect|return|animate')
       clearInterval(interval)
     }
   }, [onAnimate])

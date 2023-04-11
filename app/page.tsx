@@ -28,7 +28,7 @@ export default function Home() {
       <h3 className="print:hidden block md:hidden w-full px-3 py-1 rounded-full text-xs text-center text-black bg-white">
         I recommend viewing this site on desktop for a superior experience!
       </h3>
-      <div className="print:hidden flex md:w-[816px] justify-end">
+      <div className="z-30 print:hidden flex md:w-[816px] justify-end">
         <ButtonResume />
       </div>
       <div className="relative flex flex-col md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 to-base-950/75 backdrop-blur-lg print:from-white print:to-white">

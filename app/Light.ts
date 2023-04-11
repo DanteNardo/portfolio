@@ -1,13 +1,15 @@
 const PI2: number = Math.PI * 2
-const MinRadius: number = 20
-const MaxRadius: number = 40
+const MinRadius: number = 200
+const MaxRadius: number = 400
 const VelocityModifier: number = 4
 
-export type RGB = { red: number; green: number; blue: number }
+export type RGB = { r: number; g: number; b: number }
 
 export default class Light {
-  xBounds: number
-  yBounds: number
+  xMin: number
+  xMax: number
+  yMin: number
+  yMax: number
   x: number
   y: number
   vx: number
@@ -20,16 +22,19 @@ export default class Light {
     stageWidth: number,
     stageHeight: number,
     context: CanvasRenderingContext2D | null | undefined,
+    rgb: RGB,
   ) {
-    this.xBounds = stageWidth
-    this.yBounds = stageHeight
-    this.x = Math.random() * this.xBounds
-    this.y = Math.random() * this.yBounds
+    this.xMin = 0
+    this.xMax = stageWidth
+    this.yMin = stageHeight / 2
+    this.yMax = stageHeight
+    this.x = Math.random() * this.yMax
+    this.y = Math.random() * (this.yMax - this.yMin) + this.yMin
     this.vx = Math.random() * VelocityModifier
     this.vy = Math.random() * VelocityModifier
     this.radius = Math.random() * (MaxRadius - MinRadius) + MinRadius
     this.sin = Math.random()
-    this.rgb = { red: 255, green: 255, blue: 255 }
+    this.rgb = rgb
 
     this.animate(context)
   }
@@ -46,25 +51,37 @@ export default class Light {
     this.x += this.vx
     this.y += this.vy
 
-    if (this.x < 0) {
+    if (this.x < this.xMin) {
       this.vx *= -1
       this.x += 10
-    } else if (this.x > this.xBounds) {
+    } else if (this.x > this.xMax) {
       this.vx *= -1
       this.x -= 10
     }
 
-    if (this.y < 0) {
+    if (this.y < this.yMin) {
       this.vy *= -1
       this.y += 10
-    } else if (this.y > this.yBounds) {
+    } else if (this.y > this.yMax) {
       this.vy *= -1
       this.y -= 10
     }
 
     // console.log('beginPath')
     context.beginPath()
-    context.fillStyle = `rgba(${this.rgb?.red}, ${this.rgb?.green}, ${this.rgb?.blue}, 1)`
+    const gradient = context.createRadialGradient(
+      this.x,
+      this.y,
+      this.radius * 0.01,
+      this.x,
+      this.y,
+      this.radius,
+    )
+    const colorStart = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 1)`
+    const colorEnd = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0)`
+    gradient.addColorStop(0, colorStart)
+    gradient.addColorStop(1, colorEnd)
+    context.fillStyle = gradient
     context.arc(this.x, this.y, this.radius, 0, PI2, false)
     context.fill()
     // console.log('fill')
