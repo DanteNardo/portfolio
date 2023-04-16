@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  body {
-    web
-  }
-} */
-
 @layer utilities {
   .text-default {
     @apply text-base-500 print:text-base-400;
