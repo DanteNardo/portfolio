@@ -7,7 +7,7 @@ import Light from './Light'
 export default function BackgroundLights({}: {}) {
   const { canvasRef, clear } = useCanvas(createLights, animate)
   const [lights, setLights] = useState<Array<Light>>([])
-  const LightCount = 1000
+  const LightCount = 1
 
   function createLights(
     canvas: HTMLCanvasElement,
@@ -16,17 +16,17 @@ export default function BackgroundLights({}: {}) {
     let lights = []
     for (let i = 0; i < LightCount; i++) {
       const light = new Light(canvas?.width, canvas?.height, context, {
-        r: 255,
+        r: 128,
         g: 255,
-        b: 255,
+        b: 128,
       })
       lights.push(light)
     }
-    for (let i = 0; i < LightCount / 2; i++) {
+    for (let i = 0; i < LightCount; i++) {
       const light = new Light(canvas?.width, canvas?.height, context, {
         r: 0,
-        g: 0,
-        b: 0,
+        g: 128,
+        b: 255,
       })
       lights.push(light)
     }
