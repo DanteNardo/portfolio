@@ -45,7 +45,7 @@ export default function BackgroundLights({}: {}) {
   }
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
+    <div className="print:hidden fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   )

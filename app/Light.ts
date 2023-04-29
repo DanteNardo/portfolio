@@ -1,7 +1,8 @@
 const PI2: number = Math.PI * 2
-const MinRadius: number = 900
-const MaxRadius: number = 900
-const VelocityModifier: number = 4
+const MinRadius: number = 100
+const MaxRadius: number = 600
+const VelocityModifier: number = 6
+const PageHeightInPixels: number = 1056
 
 export type RGB = { r: number; g: number; b: number }
 
@@ -26,8 +27,8 @@ export default class Light {
   ) {
     this.xMin = stageWidth / 3
     this.xMax = (stageWidth * 2) / 3
-    this.yMin = (stageHeight * 2) / 3
-    this.yMax = stageHeight
+    this.yMax = Math.min(stageHeight, PageHeightInPixels)
+    this.yMin = this.yMax * (2 / 3)
     this.x = Math.random() * this.yMax
     this.y = Math.random() * (this.yMax - this.yMin) + this.yMin
     this.vx = Math.random() * VelocityModifier
@@ -46,6 +47,8 @@ export default class Light {
     }
 
     this.sin += 0.01
+    let radiusFactor = (Math.sin(this.sin) + 1) / 2
+    this.radius = radiusFactor * (MaxRadius - MinRadius) + MinRadius
     this.x += this.vx
     this.y += this.vy
 
@@ -74,13 +77,16 @@ export default class Light {
       this.y,
       this.radius,
     )
-    const colorStart = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 1)`
-    const colorMid = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0.1)`
-    const colorEnd = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0)`
-    gradient.addColorStop(0, colorStart)
-    gradient.addColorStop(0.2, colorMid)
-    gradient.addColorStop(1, colorEnd)
+    const colorFull = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 1)`
+    const colorHalf = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0.5)`
+    const colorQuarter = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0.25)`
+    const colorNone = `rgba(${this.rgb?.r}, ${this.rgb?.g}, ${this.rgb?.b}, 0)`
+    gradient.addColorStop(0, colorFull)
+    gradient.addColorStop(0.25, colorHalf)
+    gradient.addColorStop(0.5, colorQuarter)
+    gradient.addColorStop(1, colorNone)
     context.fillStyle = gradient
+    context.globalCompositeOperation = 'multiply'
     context.arc(this.x, this.y, this.radius, 0, PI2, false)
     context.fill()
   }

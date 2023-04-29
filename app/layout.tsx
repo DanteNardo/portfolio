@@ -27,7 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${space_mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <main
+          className="relative flex flex-col w-screen h-screen max-w-[100vw] max-h-[100svh] gap-2 md:gap-4 print:p-0 p-4 md:p-8 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
+          style={{ colorScheme: 'dark' }}
+        >
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
