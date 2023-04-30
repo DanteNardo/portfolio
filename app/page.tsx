@@ -82,20 +82,21 @@ export default function Home() {
                   <SectionItemHeader>Frontend</SectionItemHeader>
                   <SectionItemParagraph>
                     React, Next.js, Angular, Blazor, Svelte, Sveltekit, HTML,
-                    CSS, SCSS, Tailwind CSS, Vite, Webpack, PostCSS
+                    CSS, SCSS, Tailwind CSS, PostCSS, Rollup, Vite, Webpack
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/backend">
                   <SectionItemHeader>Backend</SectionItemHeader>
                   <SectionItemParagraph>
-                    REST, gRPC, NoSQL, SQL, .NET, Node, Deno
+                    REST, gRPC, NoSQL, SQL, .NET, ASP.NET Core, Node, Deno
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/cloud">
                   <SectionItemHeader>Cloud</SectionItemHeader>
                   <SectionItemParagraph>
-                    Kubernetes, Docker, Apache Kafka, AWS, AWS KMS, AWS Lambda,
-                    S3, DynamoDB, Azure, Cosmos DB, Azure Functions, Key Vault
+                    Kubernetes, Docker, Apache Kafka, AWS, AWS KMS, AWS SQS, AWS
+                    S3, AWS Lambda, DynamoDB, Azure, Cosmos DB, Azure Functions,
+                    Key Vault
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/architecture">
@@ -211,10 +212,10 @@ export default function Home() {
                     </SectionItemListItem>
                     <SectionItemListItem>
                       Architected computational geometry library and integrated
-                      this library with Perforce webhooks, S3, and serverless
-                      AWS Lambdas to perform computation asynchronously,
-                      reducing the web application's processing time on file
-                      uploads by multiple magnitudes.
+                      this library with Perforce webhooks, S3, SQS, and
+                      serverless AWS Lambdas to perform computation
+                      asynchronously, reducing the web application's processing
+                      time on file uploads by multiple magnitudes.
                     </SectionItemListItem>
                   </SectionItemList>
                 </SectionItem>
