@@ -1,5 +1,13 @@
 import RenderIfQuery from '../RenderIfQuery'
 import CodeTabs, { CodeTab } from '../CodeTabs'
+import PageSubtitle from '@/app/PageSubtitle'
+import PageTitle from '@/app/PageTitle'
+import PageWrapper from '@/app/PageWrapper'
+import PageHeader from '@/app/PageHeader'
+import PageBody from '@/app/PageBody'
+import PageParagraph from '@/app/PageParagraph'
+import PageParagraphs from '@/app/PageParagraphs'
+import PageBackButton from '@/app/PageBackButton'
 
 export default function Page() {
   const tabs: Array<CodeTab> = [
@@ -149,8 +157,7 @@ message GetUserRequest {
 }
 
 message GetUserResponse {
-  message User
-  {
+  message User {
     string id = 1;
     string email = 2;
     string userName = 3;
@@ -207,28 +214,48 @@ public class UsersController : ControllerBase
   ]
 
   return (
-    <>
-      <div className="flex w-full h-full justify-center">
-        <div className="w-6xl max-w-full px-2 pt-12 md:pt-64 pb-4 overflow-y-auto">
-          <div className="mb-6 text-left">
-            <h2 className="mb-2 text-xl font-bold tracking-tighter font-mono">
-              <span className="">Skills</span>
-            </h2>
-            <h1 className="mb-6 text-6xl font-bold tracking-tighter text-focus">
-              Backend
-            </h1>
-          </div>
-          <div className="flex flex-col md:flex-row gap-6">
-            <RenderIfQuery query="tab" value="REST" renderIfMissing>
-              <p className="text-lg">REST</p>
-            </RenderIfQuery>
-            <RenderIfQuery query="tab" value="gRPC">
-              <p className="text-lg">gRPC</p>
-            </RenderIfQuery>
-            <CodeTabs href="/skills/backend" tabs={tabs} />
-          </div>
-        </div>
-      </div>
-    </>
+    <PageWrapper>
+      <PageHeader>
+        <PageBackButton />
+        <PageSubtitle>Skills</PageSubtitle>
+        <PageTitle>Backend</PageTitle>
+      </PageHeader>
+      <PageBody>
+        <RenderIfQuery query="tab" value="REST" renderIfMissing>
+          <PageParagraph>REST</PageParagraph>
+        </RenderIfQuery>
+        <RenderIfQuery query="tab" value="gRPC">
+          <PageParagraphs>
+            <PageParagraph>
+              At Biosero Inc, I developed over ten high-performance
+              microservices using the open-source gRPC framework.
+            </PageParagraph>
+            <PageParagraph>
+              By writing our queries and commands in a simple protobuf
+              definition, we could autogenerate client and server files with
+              build tools to speed up development.
+            </PageParagraph>
+            <PageParagraph>
+              We would also use the bi-directional streaming feature of gRPC for
+              realtime communication between services.
+            </PageParagraph>
+          </PageParagraphs>
+        </RenderIfQuery>
+        <RenderIfQuery query="tab" value="ASP.NET">
+          <PageParagraphs>
+            <PageParagraph>
+              At Biosero Inc, I maintained three ASP.NET REST API gateways for
+              distributed systems.
+            </PageParagraph>
+            <PageParagraph>
+              We used a combination of the mediator, command and query
+              responsibility segregation, and event sourcing patterns to
+              organize our code bases.
+            </PageParagraph>
+          </PageParagraphs>
+        </RenderIfQuery>
+        <CodeTabs href="/skills/backend" tabs={tabs} />
+      </PageBody>
+    </PageWrapper>
   )
 }

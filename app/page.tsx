@@ -157,9 +157,9 @@ export default function Home() {
                   </SectionItemHeaderHorizontal>
                   <SectionItemList>
                     <SectionItemListItem>
-                      Led development of multiple microservices and web
+                      {`Led development of multiple microservices and web
                       applications, ushering in the company's SAAS Azure cloud
-                      transition.
+                      transition.`}
                     </SectionItemListItem>
                     <SectionItemListItem>
                       Created scalable REST API gateways and gRPC microservices
@@ -211,11 +211,11 @@ export default function Home() {
                       on a flight plan or their live trajectory.
                     </SectionItemListItem>
                     <SectionItemListItem>
-                      Architected computational geometry library and integrated
+                      {`Architected computational geometry library and integrated
                       this library with Perforce webhooks, S3, SQS, and
                       serverless AWS Lambdas to perform computation
                       asynchronously, reducing the web application's processing
-                      time on file uploads by multiple magnitudes.
+                      time on file uploads by multiple magnitudes.`}
                     </SectionItemListItem>
                   </SectionItemList>
                 </SectionItem>
@@ -238,8 +238,8 @@ export default function Home() {
                       via web sockets.
                     </SectionItemListItem>
                     <SectionItemListItem>
-                      Supports authentication (signup, login, reset password)
-                      and authorization with PostgreSQL's Row Level Security.
+                      {`Supports authentication (signup, login, reset password)
+                      and authorization with PostgreSQL's Row Level Security.`}
                     </SectionItemListItem>
                   </SectionItemList>
                 </SectionItem>

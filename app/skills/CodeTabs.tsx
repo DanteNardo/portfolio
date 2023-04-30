@@ -21,7 +21,8 @@ export default function CodeTabs({
   const router = useRouter()
   const searchParams = useSearchParams()
   const param = searchParams.get('tab') as string
-  const selectedTabIndex = tabs?.findIndex((t) => t?.text === param)
+  const foundIndex = tabs?.findIndex((t) => t?.text === param)
+  const selectedIndex = foundIndex === -1 ? 0 : foundIndex
 
   const onChange = (index: number) => {
     const tab = tabs.at(index)
@@ -30,7 +31,7 @@ export default function CodeTabs({
 
   return (
     <div className="isolate rounded-md border-[1px] border-base-600 bg-base-900">
-      <Tab.Group selectedIndex={selectedTabIndex} onChange={onChange}>
+      <Tab.Group selectedIndex={selectedIndex} onChange={onChange}>
         <Tab.List className="flex isolate rounded-t-md border-b border-base-600 bg-gradient-to-b from-base-950 to-base-900 font-mono">
           {tabs.map((tab, index) => (
             <Tab
@@ -38,14 +39,14 @@ export default function CodeTabs({
               as={Link}
               href={`${href}?tab=${tab?.text}`}
               className={
-                index === selectedTabIndex
+                index === selectedIndex
                   ? 'group px-3 py-2 first:rounded-tl-md last:rounded-tr-md border-r border-base-600 bg-black'
                   : 'group px-3 py-2 first:rounded-tl-md last:rounded-tr-md border-r border-base-600'
               }
             >
               <span
                 className={
-                  index === selectedTabIndex
+                  index === selectedIndex
                     ? 'px-2 rounded-lg font-medium text-focus group-hover:bg-base-800'
                     : 'px-2 rounded-lg font-medium text-default hover:text-focus group-hover:bg-base-800'
                 }

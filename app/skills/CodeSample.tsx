@@ -12,7 +12,7 @@ export default function CodeSample({
   children: string
 }) {
   return (
-    <div className="flex-none w-xl max-w-full min-h-[49px] max-h-xl overflow-auto rounded-b-md font-mono text-sm">
+    <div className="flex-none w-xl max-w-full min-h-[49px] max-h-md overflow-auto rounded-b-md font-mono text-sm">
       <Typist typingDelay={20} cursor={<span className="">|</span>}>
         <SyntaxHighlighter
           language={language}
