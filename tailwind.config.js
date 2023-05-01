@@ -30,6 +30,22 @@ module.exports = {
         xl: '36rem',
         '2xl': '42rem',
       },
+      minWidth: {
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
+      maxWidth: {
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
       maxHeight: {
         xs: '20rem',
         sm: '24rem',

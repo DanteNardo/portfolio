@@ -78,17 +78,17 @@ export default function Home() {
                     C, C++, C#, JavaScript, TypeScript, Python, Lua
                   </SectionItemParagraph>
                 </SectionItem>
+                <SectionItem href="/skills/backend">
+                  <SectionItemHeader>Backend</SectionItemHeader>
+                  <SectionItemParagraph>
+                    REST, gRPC, NoSQL, SQL, .NET, ASP.NET Core, Node, Deno
+                  </SectionItemParagraph>
+                </SectionItem>
                 <SectionItem href="/skills/frontend">
                   <SectionItemHeader>Frontend</SectionItemHeader>
                   <SectionItemParagraph>
                     React, Next.js, Angular, Blazor, Svelte, Sveltekit, HTML,
                     CSS, SCSS, Tailwind CSS, PostCSS, Rollup, Vite, Webpack
-                  </SectionItemParagraph>
-                </SectionItem>
-                <SectionItem href="/skills/backend">
-                  <SectionItemHeader>Backend</SectionItemHeader>
-                  <SectionItemParagraph>
-                    REST, gRPC, NoSQL, SQL, .NET, ASP.NET Core, Node, Deno
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/cloud">

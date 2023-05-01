@@ -8,7 +8,7 @@ export default function PageParagraphs({
   children: React.ReactNode
 }) {
   const conditionalClassName = classNames({
-    'flex flex-col gap-6': true,
+    'flex flex-col max-w-[60ch] gap-6': true,
     className: className,
   })
 

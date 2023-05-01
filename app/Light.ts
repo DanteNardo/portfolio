@@ -1,7 +1,7 @@
 const PI2: number = Math.PI * 2
 const MinRadius: number = 100
 const MaxRadius: number = 600
-const VelocityModifier: number = 6
+const VelocityModifier: number = 4
 const PageHeightInPixels: number = 1056
 
 export type RGB = { r: number; g: number; b: number }
@@ -29,7 +29,7 @@ export default class Light {
     this.xMax = (stageWidth * 2) / 3
     this.yMax = Math.min(stageHeight, PageHeightInPixels)
     this.yMin = this.yMax * (2 / 3)
-    this.x = Math.random() * this.yMax
+    this.x = this.xMax / 2
     this.y = Math.random() * (this.yMax - this.yMin) + this.yMin
     this.vx = Math.random() * VelocityModifier
     this.vy = Math.random() * VelocityModifier

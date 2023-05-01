@@ -8,7 +8,7 @@ export default function PageWrapper({
   children: React.ReactNode
 }) {
   const conditionalClassName = classNames({
-    'w-[64rem] max-w-full px-2 pt-12 md:pt-48': true,
+    'w-[64rem] max-w-full px-2 pt-12 md:pt-36': true,
     className: className,
   })
 

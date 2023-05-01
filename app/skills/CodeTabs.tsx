@@ -30,9 +30,9 @@ export default function CodeTabs({
   }
 
   return (
-    <div className="isolate rounded-md border-[1px] border-base-600 bg-base-900">
+    <div className="isolate min-w-xl rounded-md border-[1px] border-base-600 bg-base-900">
       <Tab.Group selectedIndex={selectedIndex} onChange={onChange}>
-        <Tab.List className="flex isolate rounded-t-md border-b border-base-600 bg-gradient-to-b from-base-950 to-base-900 font-mono">
+        <Tab.List className="flex isolate rounded-t-md border-b border-base-600 bg-gradient-to-b from-base-950 to-base-900">
           {tabs.map((tab, index) => (
             <Tab
               key={tab?.text}
@@ -47,8 +47,8 @@ export default function CodeTabs({
               <span
                 className={
                   index === selectedIndex
-                    ? 'px-2 rounded-lg font-medium text-focus group-hover:bg-base-800'
-                    : 'px-2 rounded-lg font-medium text-default hover:text-focus group-hover:bg-base-800'
+                    ? 'px-2 py-1 rounded-lg font-semibold text-focus group-hover:bg-base-800'
+                    : 'px-2 py-1 rounded-lg font-semibold text-default group-hover:text-focus group-hover:bg-base-800'
                 }
               >
                 {tab?.text}

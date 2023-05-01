@@ -8,7 +8,7 @@ export default function PageBody({
   children: React.ReactNode
 }) {
   const conditionalClassName = classNames({
-    'flex flex-col md:flex-row gap-6': true,
+    'flex flex-col lg:flex-row gap-6': true,
     className: className,
   })
 
