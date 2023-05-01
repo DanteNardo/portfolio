@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 import { Inter, Space_Mono } from 'next/font/google'
 
 const inter = Inter({
@@ -33,6 +34,7 @@ export default function RootLayout({
           style={{ colorScheme: 'dark' }}
         >
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
