@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 import { Inter, Space_Mono } from 'next/font/google'
 
 const inter = Inter({
@@ -27,7 +28,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${space_mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <main
+          className="relative flex flex-col w-screen h-screen max-w-[100vw] max-h-[100svh] print:!w-[816px] print:!h-[1056px] gap-2 md:gap-4 print:!m-0 p-4 md:p-8 print:!p-0 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
+          style={{ colorScheme: 'dark' }}
+        >
+          {children}
+          <Analytics />
+        </main>
+      </body>
     </html>
   )
 }
