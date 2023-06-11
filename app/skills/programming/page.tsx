@@ -29,11 +29,7 @@ export default function Page() {
     {
       header: 'TypeScript',
       language: 'typescript',
-      body: `At Biosero Inc, I developed several public REST API gateways.
-      
-By implementing RESTful practices, I created scalable and flexible APIs with easy to understand behavior for consuming developers.
-
-I was responsible for configuring each gateway with an authentication solution like Azure AD or Azure AD B2C and updating Docker and CI/CD configurations for our cloud Kubernetes deployment.`,
+      body: `TODO`,
       code: `interface User {
   id: string;
   email: string;
@@ -63,11 +59,9 @@ async function getUser(userId: string): Promise<User> {
 }`,
     },
     {
-      header: 'ASP.NET',
+      header: 'C#',
       language: 'csharp',
-      body: `At Biosero Inc, I maintained three ASP.NET REST API gateways for distributed systems.
-
-I used a combination of the mediator, command and query responsibility segregation, and event sourcing patterns to organize our code bases.`,
+      body: `TODO`,
       code: `[ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/users")]
@@ -114,11 +108,7 @@ public class UsersController : ControllerBase
     {
       header: 'gRPC',
       language: 'protobuf',
-      body: `At Biosero Inc, I developed over ten high-performance microservices using the open-source gRPC framework.
-
-By writing queries and commands in a simple protobuf definition, I could autogenerate and distribute both client and server files with build tools to speed up development.
-
-I also utilized the bi-directional streaming feature of gRPC for realtime communication between services to support features like a progress bar on file upload.`,
+      body: `TODO`,
       code: `syntax = "proto3";
 
 service Query {
@@ -145,7 +135,7 @@ message GetUserResponse {
       <PageHeader>
         <PageBackButton />
         <PageSubtitle>Skills</PageSubtitle>
-        <PageTitle>Backend</PageTitle>
+        <PageTitle>Programming</PageTitle>
       </PageHeader>
       <PageBody>
         <Suspense fallback={<PageParagraphsFallback />}>
@@ -163,7 +153,7 @@ message GetUserResponse {
           ))}
         </Suspense>
         <Suspense fallback={<CodeTabsFallback />}>
-          <CodeTabs href="/skills/backend" tabs={tabs} />
+          <CodeTabs href="/skills/programming" tabs={tabs} />
         </Suspense>
       </PageBody>
     </PageWrapper>

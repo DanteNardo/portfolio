@@ -4,11 +4,11 @@
 
 @layer utilities {
   .text-default {
-    @apply text-base-500 print:text-base-400;
+    @apply text-base-400 print:text-base-400;
   }
 
   .text-focus {
-    @apply text-base-300 print:text-black;
+    @apply text-base-200 print:text-black;
   }
 
   .action-border {

@@ -1,5 +1,4 @@
 import BackgroundLights from './BackgroundLights'
-import ButtonResume from './ButtonPrint'
 import ContactLink from './ContactLink'
 import ContactLinkIcon from './ContactLinkIcon'
 import ContactLinkText from './ContactLinkText'
@@ -21,17 +20,14 @@ import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
 export default function Home() {
   return (
     <>
-      <h3 className="print:hidden block md:hidden w-full text-center">
-        <span className="px-4 py-0.5 rounded-full text-xs text-black bg-white">
+      <div className="z-30 print:hidden flex md:w-[816px] justify-end">
+        <span className="print:hidden block md:hidden px-4 py-0.5 rounded-full text-xs text-black bg-white">
           Use desktop for a superior experience!
         </span>
-      </h3>
-      <div className="z-30 print:hidden flex md:w-[816px] justify-end">
-        <ButtonResume />
       </div>
       <div className="relative md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px]">
         <BackgroundLights />
-        <div className="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-600 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white">
+        <div className="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white">
           <div className="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between">
             <h1 className="grow text-5xl md:text-6xl tracking-tighter font-bold text-focus">
               Dante Nardo
@@ -75,7 +71,7 @@ export default function Home() {
                 <SectionItem href="/skills/programming">
                   <SectionItemHeader>Programming</SectionItemHeader>
                   <SectionItemParagraph>
-                    C, C++, C#, JavaScript, TypeScript, Python, Lua
+                    C, C++, C#, Java, JavaScript, TypeScript, Python, Lua
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/backend">
@@ -87,8 +83,8 @@ export default function Home() {
                 <SectionItem href="/skills/frontend">
                   <SectionItemHeader>Frontend</SectionItemHeader>
                   <SectionItemParagraph>
-                    React, Next.js, Angular, Blazor, Svelte, Sveltekit, HTML,
-                    CSS, SCSS, Tailwind CSS, PostCSS, Rollup, Vite, Webpack
+                    React, Next.js, Blazor, Svelte, Sveltekit, Angular, HTML,
+                    CSS, SCSS, Tailwind CSS, PostCSS, Vite, Webpack
                   </SectionItemParagraph>
                 </SectionItem>
                 <SectionItem href="/skills/cloud">
@@ -212,10 +208,10 @@ export default function Home() {
                     </SectionItemListItem>
                     <SectionItemListItem>
                       {`Architected computational geometry library and integrated
-                      this library with Perforce webhooks, S3, SQS, and
-                      serverless AWS Lambdas to perform computation
-                      asynchronously, reducing the web application's processing
-                      time on file uploads by multiple magnitudes.`}
+                      this library with webhooks, Amazon's S3, SQS, and
+                      serverless Lambdas which cached results in DynamoDB, 
+                      reducing the web application's processing time on file uploads 
+                      by multiple magnitudes.`}
                     </SectionItemListItem>
                   </SectionItemList>
                 </SectionItem>

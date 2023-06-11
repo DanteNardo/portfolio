@@ -6,8 +6,9 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import CodeSample from './CodeSample'
 
 export interface CodeTab {
-  text: string
+  header: string
   code: string
+  body?: string
   language?: string
 }
 
@@ -21,12 +22,12 @@ export default function CodeTabs({
   const router = useRouter()
   const searchParams = useSearchParams()
   const param = searchParams.get('tab') as string
-  const foundIndex = tabs?.findIndex((t) => t?.text === param)
+  const foundIndex = tabs?.findIndex((t) => t?.header === param)
   const selectedIndex = foundIndex === -1 ? 0 : foundIndex
 
   const onChange = (index: number) => {
     const tab = tabs.at(index)
-    router.replace(`${href}?tab=${tab?.text}`)
+    router.replace(`${href}?tab=${tab?.header}`)
   }
 
   return (
@@ -35,9 +36,9 @@ export default function CodeTabs({
         <Tab.List className="flex isolate rounded-t-md border-b border-base-600 bg-gradient-to-b from-base-950 to-base-900">
           {tabs.map((tab, index) => (
             <Tab
-              key={tab?.text}
-              as={Link}
-              href={`${href}?tab=${tab?.text}`}
+              key={tab?.header}
+              // as={Link}
+              // href={`${href}?tab=${tab?.header}`}
               className={
                 index === selectedIndex
                   ? 'group px-3 py-2 first:rounded-tl-md last:rounded-tr-md border-r border-base-600 bg-black'
@@ -51,14 +52,14 @@ export default function CodeTabs({
                     : 'px-2 py-1 rounded-lg font-semibold text-default group-hover:text-focus group-hover:bg-base-800'
                 }
               >
-                {tab?.text}
+                {tab?.header}
               </span>
             </Tab>
           ))}
         </Tab.List>
         <Tab.Panels className="rounded-b-md">
           {tabs?.map((tab) => (
-            <Tab.Panel key={tab?.text}>
+            <Tab.Panel key={tab?.header}>
               <CodeSample language={tab?.language}>{tab?.code}</CodeSample>
             </Tab.Panel>
           ))}

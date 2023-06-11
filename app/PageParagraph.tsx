@@ -8,7 +8,7 @@ export default function PageParagraph({
   children: React.ReactNode
 }) {
   const conditionalClassName = classNames({
-    'text-lg': true,
+    'text-lg whitespace-pre-line': true,
     className: className,
   })
 

@@ -16,7 +16,7 @@ export default function PageBackButton({
   })
 
   return (
-    <Link href={href} className={conditionalClassName}>
+    <Link title="Back to home" href={href} className={conditionalClassName}>
       <GoArrowLeft size={36} />
     </Link>
   )
