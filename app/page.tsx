@@ -1,19 +1,19 @@
-import BackgroundLights from './BackgroundLights'
-import ContactLink from './ContactLink'
-import ContactLinkIcon from './ContactLinkIcon'
-import ContactLinkText from './ContactLinkText'
-import Section from './Section'
-import SectionBody from './SectionBody'
-import SectionHeader from './SectionHeader'
-import SectionItem from './SectionItem'
-import SectionItemDate from './SectionItemDate'
-import SectionItemHeader from './SectionItemHeader'
-import SectionItemHeaderHorizontal from './SectionItemHeaderHorizontal'
-import SectionItemList from './SectionItemList'
-import SectionItemListItem from './SectionItemListItem'
-import SectionItemParagraph from './SectionItemParagraph'
-import SectionItemSubtitle from './SectionItemSubtitle'
-import SectionSeparator from './SectionSeparator'
+import BackgroundLights from '@/components/light/BackgroundLights'
+import ContactLink from '@/components/contact/ContactLink'
+import ContactLinkIcon from '@/components/contact/ContactLinkIcon'
+import ContactLinkText from '@/components/contact/ContactLinkText'
+import Section from '@/components/section/Section'
+import SectionBody from '@/components/section/SectionBody'
+import SectionHeader from '@/components/section/SectionHeader'
+import SectionItem from '@/components/section/SectionItem'
+import SectionItemDate from '@/components/section/SectionItemDate'
+import SectionItemHeader from '@/components/section/SectionItemHeader'
+import SectionItemHeaderHorizontal from '@/components/section/SectionItemHeaderHorizontal'
+import SectionItemList from '@/components/section/SectionItemList'
+import SectionItemListItem from '@/components/section/SectionItemListItem'
+import SectionItemParagraph from '@/components/section/SectionItemParagraph'
+import SectionItemSubtitle from '@/components/section/SectionItemSubtitle'
+import SectionSeparator from '@/components/section/SectionSeparator'
 import { FiLinkedin } from 'react-icons/fi'
 import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
 
@@ -29,7 +29,7 @@ export default function Home() {
         <BackgroundLights />
         <div className="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white">
           <div className="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between">
-            <h1 className="grow text-5xl md:text-6xl tracking-tighter font-bold text-focus">
+            <h1 className="grow text-5xl md:text-6xl print:text-6xl tracking-tighter font-bold text-focus">
               Dante Nardo
             </h1>
             <div className="shrink flex flex-col sm:flex-row print:flex-row h-min gap-0.5">

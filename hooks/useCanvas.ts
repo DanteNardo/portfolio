@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { clearInterval, setInterval } from 'timers'
 
+// A custom hook that acts as canvas reference and
+// exposes callback methods on certain events
 export const useCanvas = (
   onResize: (
     canvas: HTMLCanvasElement,
@@ -11,9 +13,13 @@ export const useCanvas = (
     context: CanvasRenderingContext2D,
   ) => void,
 ) => {
+  const oneSecondInMilliseconds: number = 1000
+  const FPS: number = 60
+
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [frames, setFrames] = useState<number>(0)
 
+  // A function that is returned to clear the canvas when necessary
   function clear() {
     const canvas = canvasRef?.current
     if (!canvas) return
@@ -24,18 +30,17 @@ export const useCanvas = (
     context.clearRect(0, 0, canvas.width, canvas.height)
   }
 
+  // Listens to the window resize event and fires the onResize callback
   useEffect(() => {
     const resize = () => {
       const canvas = canvasRef?.current
       const context = canvas?.getContext('2d')
 
       if (canvas && context) {
-        const pixelRatio = 1 //window.devicePixelRatio > 1 ? 2 : 1
-        const stageWidth = document.body.clientWidth * pixelRatio
-        const stageHeight = document.body.clientHeight * pixelRatio
+        const stageWidth = document.body.clientWidth
+        const stageHeight = document.body.clientHeight
         canvas.width = stageWidth
         canvas.height = stageHeight
-        context.scale(pixelRatio, pixelRatio)
 
         onResize(canvas, context)
       }
@@ -49,6 +54,7 @@ export const useCanvas = (
     }
   }, [])
 
+  // Fires the animate callback on a specified interval (60 FPS)
   useEffect(() => {
     const animate = () => {
       const canvas = canvasRef?.current
@@ -62,7 +68,7 @@ export const useCanvas = (
     const interval = setInterval(() => {
       setFrames((frames) => frames + 1)
       animate()
-    }, 1000 / 60)
+    }, oneSecondInMilliseconds / FPS)
 
     return () => {
       clearInterval(interval)

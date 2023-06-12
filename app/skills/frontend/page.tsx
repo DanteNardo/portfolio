@@ -1,51 +1,14 @@
-import { Suspense } from 'react'
-import RenderIfQuery from '../RenderIfQuery'
-import CodeTabs, { CodeTab } from '../CodeTabs'
-import PageSubtitle from '@/app/PageSubtitle'
-import PageTitle from '@/app/PageTitle'
-import PageWrapper from '@/app/PageWrapper'
-import PageHeader from '@/app/PageHeader'
-import PageBody from '@/app/PageBody'
-import PageParagraph from '@/app/PageParagraph'
-import PageParagraphs from '@/app/PageParagraphs'
-import PageBackButton from '@/app/PageBackButton'
-
-function PageParagraphsFallback() {
-  return (
-    <div className="flex flex-col gap-6">
-      <div className="w-64 h-32 rounded-md bg-base-900 animate-pulse" />
-      <div className="w-64 h-32 rounded-md bg-base-900 animate-pulse" />
-      <div className="w-64 h-32 rounded-md bg-base-900 animate-pulse" />
-    </div>
-  )
-}
-
-function CodeTabsFallback() {
-  return <div className="w-xl h-lg rounded-md bg-base-900 animate-pulse" />
-}
+import PageSubtitle from '@/components/page/PageSubtitle'
+import PageTitle from '@/components/page/PageTitle'
+import PageWrapper from '@/components/page/PageWrapper'
+import PageHeader from '@/components/page/PageHeader'
+import PageBody from '@/components/page/PageBody'
+import PageParagraph from '@/components/page/PageParagraph'
+import PageParagraphs from '@/components/page/PageParagraphs'
+import PageBackButton from '@/components/page/PageBackButton'
+import FrontendCodeSample from './FrontendCodeSample'
 
 export default function Page() {
-  const tabs: Array<CodeTab> = [
-    {
-      header: 'TypeScript',
-      language: 'typescript',
-      body: `TODO`,
-      code: `TODO`,
-    },
-    {
-      header: 'C#',
-      language: 'csharp',
-      body: `TODO`,
-      code: `TODO`,
-    },
-    {
-      header: 'gRPC',
-      language: 'protobuf',
-      body: `TODO`,
-      code: `TODO`,
-    },
-  ]
-
   return (
     <PageWrapper>
       <PageHeader>
@@ -54,23 +17,31 @@ export default function Page() {
         <PageTitle>Frontend</PageTitle>
       </PageHeader>
       <PageBody>
-        <Suspense fallback={<PageParagraphsFallback />}>
-          {tabs?.map((tab: CodeTab, i: number) => (
-            <RenderIfQuery
-              key={tab?.header}
-              query="tab"
-              value={tab?.header}
-              renderIfMissing={i === 0}
+        <PageParagraphs>
+          <PageParagraph>
+            I engage in frontend development professionally and recreationally.
+            I've worked on Angular and React applications at Viasat and Blazor
+            applications at Biosero and enjoy Svelte work in my free time.
+          </PageParagraph>
+          <PageParagraph>
+            I am very comfortable with fetching data client-side or server-side,
+            setting up authentication, creating component libraries, and
+            dynamically styling components.
+          </PageParagraph>
+          <PageParagraph>
+            I have numerous frontend projects on GitHub that include everything
+            from full-stack Sveltekit and Next.js applications to static
+            Markdown site generators.{' '}
+            <a
+              href="https://github.com/TheDolentCity/portfolio"
+              className="text-blue-500 decoration-blue-500 hover:underline"
+              target="_blank"
             >
-              <PageParagraphs>
-                <PageParagraph>{tab?.body}</PageParagraph>
-              </PageParagraphs>
-            </RenderIfQuery>
-          ))}
-        </Suspense>
-        <Suspense fallback={<CodeTabsFallback />}>
-          <CodeTabs href="/skills/programming" tabs={tabs} />
-        </Suspense>
+              This entire site is on GitHub too!
+            </a>
+          </PageParagraph>
+        </PageParagraphs>
+        <FrontendCodeSample />
       </PageBody>
     </PageWrapper>
   )

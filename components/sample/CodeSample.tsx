@@ -13,7 +13,7 @@ export default function CodeSample({
 }) {
   return (
     <div className="flex-none max-w-full min-h-[49px] max-h-md overflow-auto rounded-b-md font-mono text-sm">
-      <Typist typingDelay={20} cursor={<span className="">|</span>}>
+      <Typist typingDelay={10} cursor={<span className="">|</span>}>
         <SyntaxHighlighter
           language={language}
           style={nightOwl}

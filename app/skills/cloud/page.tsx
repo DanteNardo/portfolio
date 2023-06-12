@@ -6,7 +6,7 @@ import PageBody from '@/components/page/PageBody'
 import PageParagraph from '@/components/page/PageParagraph'
 import PageParagraphs from '@/components/page/PageParagraphs'
 import PageBackButton from '@/components/page/PageBackButton'
-import ProgrammingCodeSample from './ProgrammingCodeSample'
+import CloudCodeSample from './CloudCodeSample'
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
       <PageHeader>
         <PageBackButton />
         <PageSubtitle>Skills</PageSubtitle>
-        <PageTitle>Programming</PageTitle>
+        <PageTitle>Cloud</PageTitle>
       </PageHeader>
       <PageBody>
         <PageParagraphs>
@@ -30,7 +30,7 @@ export default function Page() {
             apps in JavaScript and TypeScript.
           </PageParagraph>
         </PageParagraphs>
-        <ProgrammingCodeSample />
+        <CloudCodeSample />
       </PageBody>
     </PageWrapper>
   )
