@@ -10,7 +10,7 @@ import HeaderPopoverLinkTitle from '@/components/header/HeaderPopoverLinkTitle'
 
 export default function HeaderWorkPopover() {
   return (
-    <Popover className="relative">
+    <Popover className="relative z-30">
       {({ open }) => (
         <>
           <HeaderPopoverButton open={open}>

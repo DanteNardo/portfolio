@@ -1,0 +1,8 @@
+WORK
+- Viasat (incremental static regneration microservice)
+- Biosero (distributed systems)
+- Biosero (design libraries)
+
+PROJECTS
+- Protean RPG
+- Portfolio
