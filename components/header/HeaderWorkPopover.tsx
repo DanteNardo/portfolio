@@ -1,7 +1,8 @@
 'use client'
 
 import { Popover } from '@headlessui/react'
-import { GoBriefcase } from 'react-icons/go'
+import { GoBriefcase, GoCloud, GoDiamond, GoTable } from 'react-icons/go'
+import { RxMix } from 'react-icons/rx'
 import HeaderPopoverButton from '@/components/header/HeaderPopoverButton'
 import HeaderPopoverPanel from '@/components/header/HeaderPopoverPanel'
 import HeaderPopoverLink from '@/components/header/HeaderPopoverLink'
@@ -18,22 +19,31 @@ export default function HeaderWorkPopover() {
             <span>Work</span>
           </HeaderPopoverButton>
           <HeaderPopoverPanel>
-            <HeaderPopoverLink href="work/distributed-systems">
+            <HeaderPopoverLink href="work/cloud-platform">
               <HeaderPopoverLinkTitle>
-                <GoBriefcase size={16} />
+                <GoCloud size={16} />
                 <span>Biosero</span>
               </HeaderPopoverLinkTitle>
               <HeaderPopoverLinkDescription>
-                SaaS distributed system
+                Cloud Platform
               </HeaderPopoverLinkDescription>
             </HeaderPopoverLink>
             <HeaderPopoverLink href="work/component-libraries">
               <HeaderPopoverLinkTitle>
-                <GoBriefcase size={16} />
+                <RxMix size={16} />
                 <span>Biosero</span>
               </HeaderPopoverLinkTitle>
               <HeaderPopoverLinkDescription>
                 Component libraries
+              </HeaderPopoverLinkDescription>
+            </HeaderPopoverLink>
+            <HeaderPopoverLink href="work/polygon-library">
+              <HeaderPopoverLinkTitle>
+                <GoDiamond size={16} />
+                <span>Viasat</span>
+              </HeaderPopoverLinkTitle>
+              <HeaderPopoverLinkDescription>
+                Computational geometry
               </HeaderPopoverLinkDescription>
             </HeaderPopoverLink>
           </HeaderPopoverPanel>

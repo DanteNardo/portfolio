@@ -1,3 +1,6 @@
+const createMDX = require('@next/mdx')
+const { remarkCodeHike } = require('@code-hike/mdx')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -15,5 +18,16 @@ const nextConfig = {
   },
 }
 
-const withMDX = require('@next/mdx')()
-module.exports = withMDX(nextConfig)
+const withMDX = createMDX({
+  options: {
+    extension: /\.mdx?$/,
+    remarkPlugins: [
+      [remarkCodeHike, { theme: 'github-dark', lineNumbers: false }],
+    ],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+})
+
+module.exports = withMDX(nextConfig);

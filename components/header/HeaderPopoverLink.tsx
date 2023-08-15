@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { ReactNode } from 'react'
 
 export default function HeaderPopoverLink({
@@ -10,11 +11,11 @@ export default function HeaderPopoverLink({
   children: ReactNode
 }) {
   return (
-    <a
+    <Link
       href={href}
-      className="flex flex-col gap-1 p-2 rounded-lg text-sm hover:bg-base-800"
+      className="flex flex-col gap-1 p-2 rounded-lg text-sm hover:bg-base-900"
     >
       {children}
-    </a>
+    </Link>
   )
 }

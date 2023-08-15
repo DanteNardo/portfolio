@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply focus:outline focus:outline-1 focus:outline-primary-700;
+    @apply focus-visible:outline focus-visible:outline-1 focus-visible:outline-primary-700;
+  }
+}
+
 @layer utilities {
   .text-default {
     @apply text-base-400 print:text-base-400;

@@ -1,4 +1,5 @@
 import './globals.css'
+import "@code-hike/mdx/dist/index.css"
 import { Analytics } from '@vercel/analytics/react'
 import { Inter, Space_Mono } from 'next/font/google'
 
@@ -30,7 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${space_mono.variable}`}>
       <body>
         <main
-          className="relative flex flex-col w-screen h-screen max-w-[100vw] max-h-[100svh] print:!w-[816px] print:!h-[1056px] gap-2 md:gap-4 print:!m-0 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white"
+          className="relative flex flex-col w-screen h-screen max-w-[100vw] max-h-[100svh] print:!w-[816px] print:!h-[1056px] gap-2 md:gap-4 print:!m-0 items-center justify-start overflow-auto font-sans text-default bg-black print:bg-white focus:outline focus:outline-1 focus:outline-primary-700"
           style={{ colorScheme: 'dark' }}
         >
           {children}
