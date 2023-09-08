@@ -13,7 +13,7 @@ export default function HeaderPopoverLink({
   return (
     <Link
       href={href}
-      className="flex flex-col gap-1 p-2 rounded-lg text-sm hover:bg-base-900"
+      className="flex flex-col gap-1 p-2 rounded-lg text-sm hover:bg-base-900 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-white"
     >
       {children}
     </Link>

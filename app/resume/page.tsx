@@ -14,8 +14,8 @@ import SectionItemListItem from '@/components/section/SectionItemListItem'
 import SectionItemParagraph from '@/components/section/SectionItemParagraph'
 import SectionItemSubtitle from '@/components/section/SectionItemSubtitle'
 import SectionSeparator from '@/components/section/SectionSeparator'
-import { FiLinkedin } from 'react-icons/fi'
-import { GoLink, GoGlobe, GoMarkGithub } from 'react-icons/go'
+import { LuLinkedin, LuGithub } from 'react-icons/lu'
+import { GoLink, GoGlobe } from 'react-icons/go'
 
 export default function Page() {
   return (
@@ -36,13 +36,13 @@ export default function Page() {
               <div className="flex flex-col gap-0.5">
                 <ContactLink href="https://github.com/TheDolentCity">
                   <ContactLinkIcon>
-                    <GoMarkGithub />
+                    <LuGithub />
                   </ContactLinkIcon>
                   <ContactLinkText>TheDolentCity</ContactLinkText>
                 </ContactLink>
                 <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
                   <ContactLinkIcon>
-                    <FiLinkedin />
+                    <LuLinkedin />
                   </ContactLinkIcon>
                   <ContactLinkText>dante-nardo</ContactLinkText>
                 </ContactLink>
