@@ -1,23 +1,22 @@
 ---
-import Layout from "../layouts/MainLayout.astro";
-import BackgroundLights from "../components/light/BackgroundLights";
-import ContactLink from "../components/contact/ContactLink";
-import ContactLinkIcon from "../components/contact/ContactLinkIcon";
-import ContactLinkText from "../components/contact/ContactLinkText";
-import Section from "../components/section/Section";
-import SectionBody from "../components/section/SectionBody";
-import SectionHeader from "../components/section/SectionHeader";
-import SectionItem from "../components/section/SectionItem";
-import SectionItemDate from "../components/section/SectionItemDate";
-import SectionItemHeader from "../components/section/SectionItemHeader";
-import SectionItemHeaderHorizontal from "../components/section/SectionItemHeaderHorizontal";
-import SectionItemList from "../components/section/SectionItemList";
-import SectionItemListItem from "../components/section/SectionItemListItem";
-import SectionItemParagraph from "../components/section/SectionItemParagraph";
-import SectionItemSubtitle from "../components/section/SectionItemSubtitle";
-import SectionSeparator from "../components/section/SectionSeparator";
-import { LuLinkedin, LuGithub } from "react-icons/lu";
-import { GoLink, GoGlobe } from "react-icons/go";
+import Layout from '../layouts/MainLayout.astro'
+import BackgroundLights from '../components/light/BackgroundLights'
+import ContactLink from '../components/contact/ContactLink'
+import ContactLinkIcon from '../components/contact/ContactLinkIcon'
+import ContactLinkText from '../components/contact/ContactLinkText'
+import Section from '../components/section/Section'
+import SectionBody from '../components/section/SectionBody'
+import SectionHeader from '../components/section/SectionHeader'
+import SectionItem from '../components/section/SectionItem'
+import SectionItemDate from '../components/section/SectionItemDate'
+import SectionItemHeader from '../components/section/SectionItemHeader'
+import SectionItemHeaderHorizontal from '../components/section/SectionItemHeaderHorizontal'
+import SectionItemList from '../components/section/SectionItemList'
+import SectionItemListItem from '../components/section/SectionItemListItem'
+import SectionItemParagraph from '../components/section/SectionItemParagraph'
+import SectionItemSubtitle from '../components/section/SectionItemSubtitle'
+import SectionSeparator from '../components/section/SectionSeparator'
+import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
 ---
 
 <Layout title="Dante Nardo's Online Resume">
@@ -58,13 +57,13 @@ import { GoLink, GoGlobe } from "react-icons/go";
               href="https://www.google.com/maps/place/San+Diego,+CA/@32.8242405,-117.3891468,10z/data=!3m1!4b1!4m6!3m5!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838!16zL20vMDcxdnI"
             >
               <ContactLinkIcon>
-                <GoGlobe />
+                <LuGlobe />
               </ContactLinkIcon>
               <ContactLinkText>San Diego, CA</ContactLinkText>
             </ContactLink>
             <ContactLink href="https://dantenardo.dev">
               <ContactLinkIcon>
-                <GoLink />
+                <LuLink />
               </ContactLinkIcon>
               <ContactLinkText>https://dantenardo.dev</ContactLinkText>
             </ContactLink>
