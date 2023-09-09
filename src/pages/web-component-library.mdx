@@ -1,0 +1,43 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: Web Component Library
+author: Dante Nardo
+description: Learn about my experinece building a web component library for a SAAS platform!
+---
+
+# Cloud Platform
+
+When I joined Biosero I was the only full-time engineer working on its new SaaS cloud platform. We improved the distribution and quality of our software products via public REST APIs, performant gRPC microservices, and internal and public single-page applications.
+
+I wrote the entirety of several microservices and acted as the lead front end engineer, architecting the web portals and implementing the most complex UX features. To aid developers and unify the applications, I engineered and designed an entire component library from scratch for Biosero.
+
+## gRPC
+
+```proto
+syntax = "proto3";
+
+service Query {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse {
+  message User {
+    string id = 1;
+    string email = 2;
+    string userName = 3;
+  }
+  User user = 1;
+}
+```
+
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require("./lang/" + l);
+  return true;
+};
+```
