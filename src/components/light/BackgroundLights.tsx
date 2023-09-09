@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { useCanvas } from './useCanvas'
 import Light from './Light'
