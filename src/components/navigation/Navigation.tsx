@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu'
+} from '@/components/ui/navigation-menu';
 
 const workItems: { title: string; href: string; description: string }[] = [
   {
@@ -35,7 +35,7 @@ const workItems: { title: string; href: string; description: string }[] = [
     description:
       'Implemented library for visualizing programming flows on the web',
   },
-]
+];
 
 const projectItems: { title: string; href: string; description: string }[] = [
   {
@@ -50,7 +50,7 @@ const projectItems: { title: string; href: string; description: string }[] = [
     description:
       'Built this portfolio site from the ground up for user experience',
   },
-]
+];
 
 export default function Navigation() {
   return (
@@ -61,12 +61,8 @@ export default function Navigation() {
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {workItems.map((workItem) => (
-                <li>
-                  <NavigationLink
-                    key={workItem.title}
-                    title={workItem.title}
-                    href={workItem.href}
-                  >
+                <li key={workItem.title}>
+                  <NavigationLink title={workItem.title} href={workItem.href}>
                     {workItem.description}
                   </NavigationLink>
                 </li>
@@ -79,9 +75,8 @@ export default function Navigation() {
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {projectItems.map((projectItem) => (
-                <li>
+                <li key={projectItem.title}>
                   <NavigationLink
-                    key={projectItem.title}
                     title={projectItem.title}
                     href={projectItem.href}
                   >
@@ -101,7 +96,7 @@ export default function Navigation() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const NavigationLink = React.forwardRef<
@@ -124,6 +119,6 @@ const NavigationLink = React.forwardRef<
         </p>
       </a>
     </NavigationMenuLink>
-  )
-})
-NavigationLink.displayName = 'NavigationLink'
+  );
+});
+NavigationLink.displayName = 'NavigationLink';

@@ -16,7 +16,7 @@ import SectionItemListItem from '../components/section/SectionItemListItem'
 import SectionItemParagraph from '../components/section/SectionItemParagraph'
 import SectionItemSubtitle from '../components/section/SectionItemSubtitle'
 import SectionSeparator from '../components/section/SectionSeparator'
-import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
+import { Link, Linkedin, Github, Globe } from 'lucide-astro'
 ---
 
 <Layout title="Dante Nardo's Resume">
@@ -41,13 +41,13 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
           <div class="flex flex-col gap-0.5">
             <ContactLink href="https://github.com/TheDolentCity">
               <ContactLinkIcon>
-                <LuGithub />
+                <Github class="w-4 h-4" />
               </ContactLinkIcon>
               <ContactLinkText>TheDolentCity</ContactLinkText>
             </ContactLink>
             <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
               <ContactLinkIcon>
-                <LuLinkedin />
+                <Linkedin class="w-4 h-4" />
               </ContactLinkIcon>
               <ContactLinkText>dante-nardo</ContactLinkText>
             </ContactLink>
@@ -57,13 +57,13 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
               href="https://www.google.com/maps/place/San+Diego,+CA/@32.8242405,-117.3891468,10z/data=!3m1!4b1!4m6!3m5!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838!16zL20vMDcxdnI"
             >
               <ContactLinkIcon>
-                <LuGlobe />
+                <Globe class="w-4 h-4" />
               </ContactLinkIcon>
               <ContactLinkText>San Diego, CA</ContactLinkText>
             </ContactLink>
             <ContactLink href="https://dantenardo.dev">
               <ContactLinkIcon>
-                <LuLink />
+                <Link class="w-4 h-4" />
               </ContactLinkIcon>
               <ContactLinkText>https://dantenardo.dev</ContactLinkText>
             </ContactLink>
