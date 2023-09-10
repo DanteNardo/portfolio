@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,49 +9,48 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu'
 
 const workItems: { title: string; href: string; description: string }[] = [
   {
-    title: "Cloud Platform",
-    href: "/cloud-platform",
-    description:
-      "Built Biosero's SAAS cloud platform from the ground up",
+    title: 'Cloud Platform',
+    href: '/work/cloud-platform',
+    description: "Built Biosero's SAAS cloud platform from the ground up",
   },
   {
-    title: "Internet Outage Predictions",
-    href: "/business-aviation",
+    title: 'Viasat Outage Predictions',
+    href: '/work/viasat-outages',
     description:
-      "Created web app to predict internet outages based on a flightplan",
+      'Created web app to predict satellite internet outages based on a flightplan',
   },
   {
-    title: "Component Library",
-    href: "/component-library",
+    title: 'Component Library',
+    href: '/work/component-library',
     description:
-      "Developed general use component library for all Biosero software teams",
+      'Developed general use component library for all Biosero software teams',
   },
   {
-    title: "Flow Library",
-    href: "/flow-library",
+    title: 'Flow Library',
+    href: '/work/flow-library',
     description:
-      "Implemented library for visualizing programming flows on the web",
+      'Implemented library for visualizing programming flows on the web',
   },
-];
+]
 
 const projectItems: { title: string; href: string; description: string }[] = [
   {
-    title: "Protean App",
-    href: "/protean-app",
+    title: 'Protean App',
+    href: '/projects/protean',
     description:
-      "Allows anyone to roll dice and send messages in real-time with friends",
+      'Allows anyone to roll dice and send messages in real-time with friends',
   },
   {
-    title: "Portfolio",
-    href: "/portfolio",
+    title: 'Portfolio',
+    href: '/projects/portfolio',
     description:
-      "Built this portfolio site from the ground up for user experience",
+      'Built this portfolio site from the ground up for user experience',
   },
-];
+]
 
 export default function Navigation() {
   return (
@@ -102,19 +101,19 @@ export default function Navigation() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  );
+  )
 }
 
 const NavigationLink = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, children, ...props }, ref) => {
   return (
     <NavigationMenuLink asChild>
       <a
         ref={ref}
         className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
           className,
         )}
         {...props}
@@ -125,6 +124,6 @@ const NavigationLink = React.forwardRef<
         </p>
       </a>
     </NavigationMenuLink>
-  );
-});
-NavigationLink.displayName = "NavigationLink";
+  )
+})
+NavigationLink.displayName = 'NavigationLink'

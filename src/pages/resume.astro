@@ -19,9 +19,9 @@ import SectionSeparator from '../components/section/SectionSeparator'
 import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
 ---
 
-<Layout title="Dante Nardo's Online Resume">
+<Layout title="Dante Nardo's Resume">
   <div
-    class="relative md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] mx-auto"
+    class="relative md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] mx-auto print:m-0"
   >
     <BackgroundLights client:only="react" />
     <div
@@ -133,7 +133,52 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
           </SectionBody>
         </Section>
         <Section className="md:col-span-2 print:col-span-2">
-          <SectionHeader className="mt-6 md:mt-0 print:mt-0">
+          <SectionHeader className="mt-6 md:mt-0 print:mt-0">Experience</SectionHeader>
+          <SectionSeparator />
+          <SectionBody>
+            <SectionItem href="/work/cloud-platform">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Senior Software Engineer</SectionItemHeader>
+                <SectionItemSubtitle>at Biosero Inc.</SectionItemSubtitle>
+                <SectionItemDate>Nov 2020 - Present</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemList>
+                <SectionItemListItem>
+                  {
+                    `Developed multiple microservices and web applications to facilitate the company's transition to SAAS Azure cloud.`
+                  }
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Created two company-wide component libraries: one with a new design system for general purposes, and another for interactive flow visualizations to enhance web visual programming tools.
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Designed and implemented internal and customer web portals, streamlining subscription management, license tracking, and access to installers, drivers, and documentation.
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Deployed scalable REST API gateways and gRPC microservices to Kubernetes cluster using Docker and CI/CD pipeline.
+                </SectionItemListItem>
+              </SectionItemList>
+            </SectionItem>
+            <SectionItem href="/work/viasat-outages">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Software Engineer</SectionItemHeader>
+                <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
+                <SectionItemDate>Jan 2019 - Apr 2020</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemList>
+                <SectionItemListItem>
+                  Developed real-time web app providing accurate internet quality and outage information based on flight plans or live trajectory.
+                </SectionItemListItem>
+                <!-- <SectionItemListItem>
+                  Implemented computational geometry library in Java to process flight paths and determine when and where outages would occur.
+                </SectionItemListItem> -->
+                <SectionItemListItem>
+                  Implemented computational geometry library along with a serverless microservice using webhooks, Amazon S3, SQS, Lambdas, and Dynamo DB to significantly reduce processing time for file uploads in the web application.
+                </SectionItemListItem>
+              </SectionItemList>
+            </SectionItem>
+          </SectionBody>
+          <SectionHeader className="mt-6">
             Education
           </SectionHeader>
           <SectionSeparator />
@@ -150,89 +195,6 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
               </SectionItemParagraph>
             </SectionItem>
           </SectionBody>
-          <SectionHeader className="mt-6">Experience</SectionHeader>
-          <SectionSeparator />
-          <SectionBody>
-            <SectionItem href="/experience/biosero">
-              <SectionItemHeaderHorizontal>
-                <SectionItemHeader>Senior Software Engineer</SectionItemHeader>
-                <SectionItemSubtitle>at Biosero Inc.</SectionItemSubtitle>
-                <SectionItemDate>Nov 2020 - Present</SectionItemDate>
-              </SectionItemHeaderHorizontal>
-              <SectionItemList>
-                <SectionItemListItem>
-                  {
-                    `Led development of multiple microservices and web
-                  applications, ushering in the company's SAAS Azure cloud
-                  transition.`
-                  }
-                </SectionItemListItem>
-                <SectionItemListItem>
-                  Created scalable REST API gateways and gRPC microservices
-                  using the event sourcing and CQRS patterns.
-                </SectionItemListItem>
-                <SectionItemListItem>
-                  Led development of internal web portal to create subscription
-                  plans, products, and licenses for customers.
-                </SectionItemListItem>
-                <SectionItemListItem>
-                  Led development of customer web portal to access
-                  subscriptions, assign seats to users, and navigate to external
-                  web apps.
-                </SectionItemListItem>
-                {
-                  /* <SectionItemListItem>
-                  Led development of multiple web portals including an
-                  internal portal to manage product offerings and licensing
-                  as well as a customer portal to access products and assign
-                  licenses to users.
-                </SectionItemListItem> */
-                }
-                {
-                  /* <SectionItemListItem>
-                  Led development of multiple web portals that allowed
-                  internal users and external customers to manage products
-                  in real time.
-                </SectionItemListItem> */
-                }
-                <SectionItemListItem>
-                  Architected and maintained two company-wide Blazor component
-                  libraries, one for general purpose with a new design system of
-                  my making, and another for flow visualizations that could be
-                  used for visual programming user interfaces.
-                </SectionItemListItem>
-                {
-                  /* <SectionItemListItem>
-                  Developed multiple API gateways and gRPC based
-                  microservices using the event sourcing and CQRS patterns.
-                </SectionItemListItem> */
-                }
-              </SectionItemList>
-            </SectionItem>
-            <SectionItem href="/experience/viasat-web">
-              <SectionItemHeaderHorizontal>
-                <SectionItemHeader>Software Engineer</SectionItemHeader>
-                <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
-                <SectionItemDate>Jan 2019 - Apr 2020</SectionItemDate>
-              </SectionItemHeaderHorizontal>
-              <SectionItemList>
-                <SectionItemListItem>
-                  Developed realtime web app for business aviation customers
-                  that provided accurate internet outages and quality based on a
-                  flight plan or their live trajectory.
-                </SectionItemListItem>
-                <SectionItemListItem>
-                  {
-                    `Architected computational geometry library and integrated
-                  this library with webhooks, Amazon's S3, SQS, and
-                  serverless Lambdas which cached results in DynamoDB, 
-                  reducing the web application's processing time on file uploads 
-                  by multiple magnitudes.`
-                  }
-                </SectionItemListItem>
-              </SectionItemList>
-            </SectionItem>
-          </SectionBody>
           <SectionHeader className="mt-6">Projects</SectionHeader>
           <SectionSeparator />
           <SectionBody>
@@ -244,22 +206,25 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
                 </SectionItemSubtitle>
                 <SectionItemDate>2022 - 2023</SectionItemDate>
               </SectionItemHeaderHorizontal>
-              <SectionItemList>
-                <SectionItemListItem>
-                  Users can view a list of games, join an active game, and then
-                  send messages and roll virtual dice with other users via web
-                  sockets.
-                </SectionItemListItem>
-                <SectionItemListItem>
-                  {
-                    `Supports authentication (signup, login, reset password)
-                  and authorization with PostgreSQL's Row Level Security.`
-                  }
-                </SectionItemListItem>
-              </SectionItemList>
+              <SectionItemParagraph>
+                Users can create rooms, join active rooms, and then
+                send messages and roll dice with other users via web
+                sockets.
+              </SectionItemParagraph>
             </SectionItem>
-            {
-              /* <SectionItem href="/projects/project-colorblind">
+            <SectionItem href="/projects/portfolio">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Portfolio</SectionItemHeader>
+                <SectionItemSubtitle>
+                  a website built with Astro and React
+                </SectionItemSubtitle>
+                <SectionItemDate>2023</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemParagraph>
+                A high performance website with MDX content, animations, custom canvas effects, and almost zero JS deployed to Vercel.
+              </SectionItemParagraph>
+            </SectionItem>
+            <!-- <SectionItem href="/projects/project-colorblind">
               <SectionItemHeaderHorizontal>
                 <SectionItemHeader>Project Colorblind</SectionItemHeader>
                 <SectionItemSubtitle>
@@ -278,8 +243,7 @@ import { LuLink, LuLinkedin, LuGithub, LuGlobe } from 'react-icons/lu'
                   can see with their glasses on.
                 </SectionItemListItem>
               </SectionItemList>
-            </SectionItem> */
-            }
+            </SectionItem> -->
           </SectionBody>
         </Section>
       </div>

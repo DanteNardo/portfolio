@@ -3,5 +3,5 @@ export default function SectionItemList({
 }: {
   children: React.ReactNode
 }) {
-  return <ul className="pl-4 list-disc text-sm">{children}</ul>
+  return <ul className="list-disc pl-4 text-sm">{children}</ul>
 }

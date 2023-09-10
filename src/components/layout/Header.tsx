@@ -1,5 +1,5 @@
-import Navigation from '@/components/navigation/Navigation'
-import ResumeButton from '@/components/resume/ResumeButton'
+import Navigation from '@/components/navigation/Navigation';
+import ResumeButton from '@/components/resume/ResumeButton';
 
 export default function Header() {
   return (
@@ -9,10 +9,10 @@ export default function Header() {
           Dante Nardo
         </h2>
       </a>
-      <span className="flex-grow order-last sm:order-none overflow-x-auto">
+      <span className="flex-grow order-last sm:order-none">
         <Navigation />
       </span>
       <ResumeButton />
     </header>
-  )
+  );
 }

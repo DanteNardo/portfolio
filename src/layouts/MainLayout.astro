@@ -5,6 +5,7 @@ import "@fontsource/space-mono/700.css";
 import "@/styles/main.css";
 
 import { ViewTransitions } from "astro:transitions";
+import Body from "@/components/layout/Body";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
 
@@ -26,16 +27,10 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="dark">
-    <div
-      class="w-full max-w-[100vw] max-h-[100svh] min-h-[100svh] print:!w-[816px] print:!h-[1056px] print:!m-0 items-center justify-start overflow-x-auto overflow-y-scroll font-sans text-default bg-base-950 print:bg-white acc-focus"
-      style="color-scheme:dark;"
-    >
-      <Header client:load />
-      <Main>
-        <slot />
-      </Main>
-    </div>
-    <style is:global></style>
-  </body>
+  <Body>
+    <Header client:load />
+    <Main>
+      <slot />
+    </Main>
+  </Body>
 </html>
