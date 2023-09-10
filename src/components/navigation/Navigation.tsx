@@ -88,11 +88,12 @@ export default function Navigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/education">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Education
-            </NavigationMenuLink>
-          </a>
+          <NavigationMenuLink
+            href="/education"
+            className={navigationMenuTriggerStyle()}
+          >
+            Education
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

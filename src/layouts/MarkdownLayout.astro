@@ -4,6 +4,8 @@ import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
 import "@/styles/main.css";
 
+import type { MarkdownLayoutProps } from 'astro';
+
 import Body from "@/components/layout/Body";
 import Header from "@/components/layout/Header";
 import Main from "@/components/layout/Main";
@@ -11,22 +13,24 @@ import MainGradient from "@/components/article/MainGradient";
 import Article from "@/components/article/Article";
 import { ViewTransitions } from "astro:transitions";
 
-interface Props {
+type Props = MarkdownLayoutProps<{
   title: string;
-}
+  author: string;
+  description: string;
+}>;
 
-const { title } = Astro.props;
+const { frontmatter, url } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Dante Nardo's portfolio website" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta name="description" content={frontmatter.description} />
+    <title>{frontmatter.title}</title>
     <ViewTransitions />
   </head>
   <Body>
