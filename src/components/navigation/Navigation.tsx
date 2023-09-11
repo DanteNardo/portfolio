@@ -13,7 +13,7 @@ import {
 
 const workItems: { title: string; href: string; description: string }[] = [
   {
-    title: 'Cloud Platform',
+    title: 'Biosero Cloud Platform',
     href: '/work/cloud-platform',
     description: "Built Biosero's SAAS cloud platform from the ground up",
   },
@@ -21,13 +21,12 @@ const workItems: { title: string; href: string; description: string }[] = [
     title: 'Viasat Outage Predictions',
     href: '/work/viasat-outages',
     description:
-      'Created web app to predict satellite internet outages based on a flightplan',
+      'Created web app to predict internet outages for in-flight wifi',
   },
   {
     title: 'Component Library',
     href: '/work/component-library',
-    description:
-      'Developed general use component library for all Biosero software teams',
+    description: 'Developed and designed general use web component library',
   },
   {
     title: 'Flow Library',
@@ -59,7 +58,7 @@ export default function Navigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Work</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[20rem] gap-3 p-4 md:w-[36rem] md:grid-cols-2 lg:w-[600px] ">
               {workItems.map((workItem) => (
                 <li key={workItem.title}>
                   <NavigationLink title={workItem.title} href={workItem.href}>
@@ -73,7 +72,7 @@ export default function Navigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[20rem] gap-3 p-4 md:w-[36rem] md:grid-cols-2 lg:w-[600px] ">
               {projectItems.map((projectItem) => (
                 <li key={projectItem.title}>
                   <NavigationLink
