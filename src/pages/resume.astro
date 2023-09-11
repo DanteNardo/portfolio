@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/MainLayout.astro'
+import BackgroundLights from '../components/light/BackgroundLights'
+import ContactLink from '../components/contact/ContactLink'
+import ContactLinkIcon from '../components/contact/ContactLinkIcon'
+import ContactLinkText from '../components/contact/ContactLinkText'
+import Section from '../components/section/Section'
+import SectionBody from '../components/section/SectionBody'
+import SectionHeader from '../components/section/SectionHeader'
+import SectionItem from '../components/section/SectionItem'
+import SectionItemDate from '../components/section/SectionItemDate'
+import SectionItemHeader from '../components/section/SectionItemHeader'
+import SectionItemHeaderHorizontal from '../components/section/SectionItemHeaderHorizontal'
+import SectionItemList from '../components/section/SectionItemList'
+import SectionItemListItem from '../components/section/SectionItemListItem'
+import SectionItemParagraph from '../components/section/SectionItemParagraph'
+import SectionItemSubtitle from '../components/section/SectionItemSubtitle'
+import SectionSeparator from '../components/section/SectionSeparator'
+import { Link, Linkedin, Github, Globe } from 'lucide-astro'
+---
+
+<Layout title="Dante | Resume">
+  <div
+    class="relative md:w-[816px] md:h-[1056px] print:w-[816px] print:h-[1056px] mx-auto print:m-0"
+  >
+    <BackgroundLights client:only="react" />
+    <div
+      class="flex flex-col w-full h-full px-8 py-6 rounded print:border-[0px] border border-base-700 bg-gradient-to-b from-base-900 via-base-950 to-base-950/50 backdrop-blur-xl print:from-white print:to-white"
+    >
+      <div
+        class="flex flex-col md:flex-row print:flex-row w-full gap-8 px-2 pb-12 justify-between"
+      >
+        <h1
+          class="grow text-5xl md:text-6xl print:text-6xl tracking-tighter font-bold text-focus"
+        >
+          Dante Nardo
+        </h1>
+        <div
+          class="shrink flex flex-col sm:flex-row print:flex-row h-min gap-0.5"
+        >
+          <div class="flex flex-col gap-0.5">
+            <ContactLink href="https://github.com/TheDolentCity">
+              <ContactLinkIcon>
+                <Github class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>TheDolentCity</ContactLinkText>
+            </ContactLink>
+            <ContactLink href="https://www.linkedin.com/in/dante-nardo/">
+              <ContactLinkIcon>
+                <Linkedin class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>dante-nardo</ContactLinkText>
+            </ContactLink>
+          </div>
+          <div class="flex flex-col gap-1">
+            <ContactLink
+              href="https://www.google.com/maps/place/San+Diego,+CA/@32.8242405,-117.3891468,10z/data=!3m1!4b1!4m6!3m5!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838!16zL20vMDcxdnI"
+            >
+              <ContactLinkIcon>
+                <Globe class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>San Diego, CA</ContactLinkText>
+            </ContactLink>
+            <ContactLink href="https://dantenardo.dev">
+              <ContactLinkIcon>
+                <Link class="w-4 h-4" />
+              </ContactLinkIcon>
+              <ContactLinkText>https://dantenardo.dev</ContactLinkText>
+            </ContactLink>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex-auto grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-4 overflow-hidden"
+      >
+        <Section>
+          <SectionHeader>Skills</SectionHeader>
+          <SectionSeparator />
+          <SectionBody
+            className="grid grid-cols-1 sm:grid-cols-2 md:flex print:flex"
+          >
+            <SectionItem href="/skills/programming">
+              <SectionItemHeader>Programming</SectionItemHeader>
+              <SectionItemParagraph>
+                TypeScript, C#, C++, C, Java, JavaScript, Python, Lua
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/backend">
+              <SectionItemHeader>Backend</SectionItemHeader>
+              <SectionItemParagraph>
+                REST, gRPC, SQL, NoSQL, Node, .NET, ASP.NET Core, Deno
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/frontend">
+              <SectionItemHeader>Frontend</SectionItemHeader>
+              <SectionItemParagraph>
+                React, Next.js, Blazor, Svelte, Sveltekit, Angular, HTML, CSS,
+                SCSS, Tailwind CSS, PostCSS, Vite, Webpack
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/cloud">
+              <SectionItemHeader>Cloud</SectionItemHeader>
+              <SectionItemParagraph>
+                Kubernetes, Docker, Apache Kafka, AWS, AWS KMS, AWS SQS, AWS S3,
+                AWS Lambda, DynamoDB, Azure, Cosmos DB, Azure Functions, Key
+                Vault
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/architecture">
+              <SectionItemHeader>Architecture</SectionItemHeader>
+              <SectionItemParagraph>
+                OOP, Microservices, Distributed Systems, Event Sourcing, CQRS
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/operating-systems">
+              <SectionItemHeader>Operating Systems</SectionItemHeader>
+              <SectionItemParagraph>
+                Windows, Mac OS, Linux, BASH, WSL, Powershell
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/productivity">
+              <SectionItemHeader>Productivity</SectionItemHeader>
+              <SectionItemParagraph>
+                Git, Perforce, Scrum, Kanban, Jira, GitHub, CI/CD
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/skills/graphics-and-design">
+              <SectionItemHeader>Graphics & Design</SectionItemHeader>
+              <SectionItemParagraph>
+                OpenGL, WebGL, Unity 3D, Adobe Suite, Affinity Serif Suite
+              </SectionItemParagraph>
+            </SectionItem>
+          </SectionBody>
+        </Section>
+        <Section className="md:col-span-2 print:col-span-2">
+          <SectionHeader className="mt-6 md:mt-0 print:mt-0">Experience</SectionHeader>
+          <SectionSeparator />
+          <SectionBody>
+            <SectionItem href="/work/cloud-platform">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Senior Software Engineer</SectionItemHeader>
+                <SectionItemSubtitle>at Biosero Inc.</SectionItemSubtitle>
+                <SectionItemDate>Nov 2020 - Present</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemList>
+                <SectionItemListItem>
+                  {
+                    `Developed multiple microservices and web applications to facilitate the company's transition to SAAS Azure cloud.`
+                  }
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Created two company-wide component libraries: one with a new design system for general purposes, and another for interactive flow visualizations to enhance web visual programming tools.
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Designed and implemented internal and customer web portals, streamlining subscription management, license tracking, and access to installers, drivers, and documentation.
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Deployed scalable REST API gateways and gRPC microservices to Kubernetes cluster using Docker and CI/CD pipeline.
+                </SectionItemListItem>
+              </SectionItemList>
+            </SectionItem>
+            <SectionItem href="/work/viasat-outages">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Software Engineer</SectionItemHeader>
+                <SectionItemSubtitle>at Viasat Inc.</SectionItemSubtitle>
+                <SectionItemDate>Jan 2019 - Apr 2020</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemList>
+                <SectionItemListItem>
+                  Developed real-time web app providing accurate internet quality and outage information based on flight plans or live trajectory.
+                </SectionItemListItem>
+                <!-- <SectionItemListItem>
+                  Implemented computational geometry library in Java to process flight paths and determine when and where outages would occur.
+                </SectionItemListItem> -->
+                <SectionItemListItem>
+                  Implemented computational geometry library along with a serverless microservice using webhooks, Amazon S3, SQS, Lambdas, and Dynamo DB to significantly reduce processing time for file uploads in the web application.
+                </SectionItemListItem>
+              </SectionItemList>
+            </SectionItem>
+          </SectionBody>
+          <SectionHeader className="mt-6">
+            Education
+          </SectionHeader>
+          <SectionSeparator />
+          <SectionBody>
+            <SectionItem href="/education">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>
+                  B.S. Game Design & Development
+                </SectionItemHeader>
+                <SectionItemDate>Dec 2018</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemParagraph>
+                Rochester Institute of Technology
+              </SectionItemParagraph>
+            </SectionItem>
+          </SectionBody>
+          <SectionHeader className="mt-6">Projects</SectionHeader>
+          <SectionSeparator />
+          <SectionBody>
+            <SectionItem href="/projects/protean">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Protean RPG</SectionItemHeader>
+                <SectionItemSubtitle>
+                  a realtime Sveltekit web app
+                </SectionItemSubtitle>
+                <SectionItemDate>2022 - 2023</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemParagraph>
+                Users can create rooms, join active rooms, and then
+                send messages and roll dice with other users via web
+                sockets.
+              </SectionItemParagraph>
+            </SectionItem>
+            <SectionItem href="/projects/portfolio">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Portfolio</SectionItemHeader>
+                <SectionItemSubtitle>
+                  a website built with Astro and React
+                </SectionItemSubtitle>
+                <SectionItemDate>2023</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemParagraph>
+                A high performance website with MDX content, animations, custom canvas effects, and almost zero JS deployed to Vercel.
+              </SectionItemParagraph>
+            </SectionItem>
+            <!-- <SectionItem href="/projects/project-colorblind">
+              <SectionItemHeaderHorizontal>
+                <SectionItemHeader>Project Colorblind</SectionItemHeader>
+                <SectionItemSubtitle>
+                  an experimental video game
+                </SectionItemSubtitle>
+                <SectionItemDate>2018</SectionItemDate>
+              </SectionItemHeaderHorizontal>
+              <SectionItemList>
+                <SectionItemListItem>
+                  Led development of a cooperative puzzle platformer where
+                  users wore colored eyeglasses that hid game elements from
+                  view.
+                </SectionItemListItem>
+                <SectionItemListItem>
+                  Players must work together to convey information only they
+                  can see with their glasses on.
+                </SectionItemListItem>
+              </SectionItemList>
+            </SectionItem> -->
+          </SectionBody>
+        </Section>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,44 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: Dante | Portfolio
+author: Dante Nardo
+description: Dante Nardo's portfolio shows off his work and project experience as a software engineer, designer, and product innovator.
+---
+
+import Badge from '../components/badge/Badge.tsx';
+import BadgeList from '../components/badge/BadgeList.tsx';
+import CreativeLink from '../components/link/CreativeLink.tsx';
+import Card from '../components/card/Card.tsx';
+import CardTitle from '../components/card/CardTitle.tsx';
+import CardDescription from '../components/card/CardDescription.tsx';
+import Grid from '../components/layout/Grid.tsx';
+import Subtitle from '../components/layout/Subtitle.tsx';
+
+# Welcome
+<Subtitle>to my portfolio</Subtitle>
+
+---
+
+### I am an engineer, designer, and coffee enthusiast.
+This portfolio contains my interactive resume and details about my work and project experience. Here are a few of the experiences I'm most proud of:
+
+---
+
+<Grid>
+  <Card href="/projects/protean">
+    <CardTitle>Protean App</CardTitle>
+    <CardDescription>A web app for rolling dice and sending messages with friends</CardDescription>
+  </Card>
+  <Card href="/work/component-library">
+    <CardTitle>Component Library</CardTitle>
+    <CardDescription>A general use web component library for an organization</CardDescription>
+  </Card>
+  <Card href="/work/cloud-platform">
+    <CardTitle>Cloud Platform</CardTitle>
+    <CardDescription>A SAAS platform for licensing and distributing software</CardDescription>
+  </Card>
+  <Card href="/work/flow-library">
+    <CardTitle>Flow Library</CardTitle>
+    <CardDescription>A web library for visualizing programming flows</CardDescription>
+  </Card>
+</Grid>
