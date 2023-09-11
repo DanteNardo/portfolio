@@ -5,6 +5,50 @@ author: Dante Nardo
 description: Learn about my experience building a component library for a SAAS platform!
 ---
 
-# Component Library
+import { Image } from "astro:assets";
+import ComponentDocumentationCode from "../../images/biosero-component-documentation-code.png";
+import ComponentDocumentationDark from "../../images/biosero-component-documentation-dark.png";
+import ComponentDocumentationLight from "../../images/biosero-component-documentation-light.png";
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import Badge from '../../components/badge/Badge.tsx';
+import BadgeList from '../../components/badge/BadgeList.tsx';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 
-TODO
+# Component Library
+As Biosero transitioned from desktop software to web, we quickly found the need to distribute our components across several web apps. I took the initiative to create a general purpose component library. 
+
+## Build Faster
+Biosero developers can easily add static UI elements like badges, interactive elements like dropdowns, and complex behaviors like focus traps to their application with my component library. The design supports both light and dark mode with theming possible through CSS variables.
+
+<ArticleImage>
+  <Image src={ComponentDocumentationDark} alt="This image depicts a documentation website that shows all the ways to display a button component including adding icons, loading spinners, and changing its accent style." />
+</ArticleImage>
+<ArticleCaption>The dark theme button documentation</ArticleCaption>
+
+<ArticleImage>
+  <Image src={ComponentDocumentationLight} alt="This image depicts a documentation website that shows part of the button component documentation but with the light theme instead of the dark theme." />
+</ArticleImage>
+<ArticleCaption>The light theme button documentation</ArticleCaption>
+
+{/* <Image src={ComponentDocumentationDark} alt="This image depicts a documentation website that shows all the ways to display a button component including adding icons, loading spinners, and changing its accent style.">The dark theme button documentation</Image>
+
+<Image src={ComponentDocumentationLight} alt="This image depicts a documentation website that shows part of the button component documentation but with the light theme instead of the dark theme.">The light theme button documentation</Image> */}
+
+## Documented Like a Pro
+One of the consequences of using Blazor is that there is far less documentation tooling compared to the JavaScript ecosystem. Building the library was the first challenge; the second was finding a way to make it easy for software engineers across Biosero to discover and use the components in their projects.
+
+I built a documentation site much like Storybook in order to accomplish this. Developers can find over 100 components with samples for how each property affects its appearance or behavior. When they find what they need they can view the code of the live sample they're seeing on the screen and paste it into their project.
+
+<ArticleImage>
+  <Image src={ComponentDocumentationCode} alt="This image depicts a documentation website with a Toast component that shows all of the code a developer would need to use the component in their own app." />
+</ArticleImage>
+<ArticleCaption>The syntax-highlighted code samples to use Toasts in an app</ArticleCaption>
+
+{/* <Image src={ComponentDocumentationCode} alt="This image depicts a documentation website with a Toast component that shows all of the code a developer would need to use the component in their own app.">The syntax-highlighted code samples to use Toasts in an app</Image> */}
+
+## Technical Details
+- Documentation built using <Badge>Blazor</Badge> and <Badge>ASP.NET Core</Badge>
+- Components built with <Badge>Blazor</Badge>, <Badge>JavaScript</Badge>, and <Badge>Tailwind CSS</Badge>
+- Syntax highlighting using <Badge>Prism</Badge>
+- Deployed to <Badge>Azure</Badge> via <Badge>GitHub</Badge> CI/CD
