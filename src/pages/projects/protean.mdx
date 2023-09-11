@@ -7,7 +7,7 @@ description: Learn about my protean app project
 
 import Badge from '../../components/badge/Badge.tsx';
 import BadgeList from '../../components/badge/BadgeList.tsx';
-import CreativeLink from '../../components/link/CreativeLink.tsx';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 
 # Protean App
 
@@ -17,31 +17,31 @@ Protean is a free tool for sending messages and rolling dice with friends. I cre
 
 Many free web apps require authentication and impose storage limits, but I found that unwarranted for this project. Protean app has no authentication and no data is saved or cached. Rooms are transient and live as long as users are connected to them. When a new user joins, the server requests the current room's state from an existing user and sends it to the new user. Once every user leaves, the room and its data ceases to exist.
 
-<CreativeLink href="https://proteanrpg.com" openInNewTab>
+<ArticleLink href="https://proteanrpg.com" openInNewTab>
   Spin up a new room and try it out now
-</CreativeLink>
+</ArticleLink>
 
 ## Technical Details
 
 - Web app built using <Badge>Sveltekit</Badge>
 - Web socket server built using <Badge>Node</Badge>, <Badge>Express</Badge>, and <Badge>Socket.IO</Badge>
 - Messages support <Badge>Markdown</Badge> and are sanitized on the client and server
-- Interactive components built with <Badge>Svelte</Badge> and <Badge>TypeScript</Badge>
+- Interactive components built with <Badge>Svelte</Badge>, <Badge>TypeScript</Badge>, and <Badge>Tailwind CSS</Badge>
 - Web app deployed to <Badge>Vercel</Badge> via <Badge>GitHub</Badge> CI/CD
 - Web socket server deployed to <Badge>Railway</Badge> via <Badge>GitHub</Badge> CI/CD
 
 ## Source
 
-<CreativeLink
+<ArticleLink
   href="https://github.com/TheDolentCity/protean-rpg-app"
   openInNewTab
 >
   Front end web app
-</CreativeLink>
+</ArticleLink>
 
-<CreativeLink
+<ArticleLink
   href="https://github.com/TheDolentCity/protean-rpg-sockets"
   openInNewTab
 >
   Back end websocket server
-</CreativeLink>
+</ArticleLink>

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { MoveRight } from 'lucide-react';
 
-export default function CreativeLink({
+export default function ArticleLink({
   href,
   openInNewTab = false,
   children,
