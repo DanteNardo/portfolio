@@ -14,7 +14,7 @@ export default function CreativeLink({
     <a
       href={href}
       target={openInNewTab ? '_blank' : '_self'}
-      className="not-prose flex gap-2 items-center rounded-lg text-xl font-medium cursor-pointer text-theme-500 decoration-theme-500 decoration-2 hover:underline mst"
+      className="not-prose flex gap-2 items-center rounded-lg text-base md:text-xl font-medium cursor-pointer text-theme-500 decoration-theme-500 decoration-2 hover:underline mst"
     >
       {children}
       <MoveRight />
