@@ -1,21 +1,21 @@
 import { FileText, Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export default function ResumeButton() {
   return (
-    <div className="flex gap-0.5 rounded bg-black">
+    <div className="flex gap-px rounded text-black bg-black">
       <a
         href="/resume"
-        className="flex gap-2 px-3 py-1 items-center rounded-l bg-white text-black"
+        title="Interactive resume"
+        className="flex gap-2 px-3 py-2 items-center rounded-l bg-white hover:bg-base-300 active:bg-base-400 mst"
       >
         <FileText className="w-4 h-4" />
-        <span className="text-base">Resume</span>
+        <span className="text-sm font-medium">Resume</span>
       </a>
       <a
         href="/resume-dante-nardo.pdf"
-        download
         title="Download resume"
-        className="flex items-center justify-center rounded-r pl-2 pr-2 bg-white text-black"
+        download
+        className="flex items-center justify-center rounded-r px-3 bg-white hover:bg-base-300 active:bg-base-400 mst"
       >
         <Download className="w-4 h-4" />
       </a>
