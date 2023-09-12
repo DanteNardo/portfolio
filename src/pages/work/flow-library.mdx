@@ -5,6 +5,26 @@ author: Dante Nardo
 description: TODO
 ---
 
-# Flow Library
+import { Image } from "astro:assets";
+import BioseroFlowVisualization from "../../images/biosero-flow-visualization.png";
+import Badge from '../../components/badge/Badge.tsx';
+import BadgeList from '../../components/badge/BadgeList.tsx';
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 
-TODO
+# Flow Library
+I implemented the Flow library to provide Biosero developers with a tool to represent their desktop visual programs in a web environment. I programmed the user interface, the resizing/collapsing behaviors, and the dynamic layout engine.
+
+## Program Visualization
+Biosero's legacy desktop software acts as a visual programming tool for scientists. I was charged with creating a web version for our new cloud platform. The framework itself is agnostic to business logic and is only concerned with rendering linked blocks of content. The developer has to map a model to a visual component at runtime to display their data correctly. But no matter the size of the generated UI element, the engine will properly layout a readable visual program.
+
+<ArticleImage>
+  <Image src={BioseroFlowVisualization} alt="This image depicts part of a web interface showing several nodes connected to each other representing a visual program." />
+</ArticleImage>
+<ArticleCaption>Part of a visual program rendered by the library</ArticleCaption>
+
+## Technical Details
+- Components built with <Badge>Blazor</Badge>, <Badge>JavaScript</Badge>, and <Badge>Tailwind CSS</Badge>
+- Computation engine built with <Badge>JavaScript</Badge> and <Badge>C#</Badge>
+- Documentation built using <Badge>Blazor</Badge> and <Badge>ASP.NET Core</Badge>
