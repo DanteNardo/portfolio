@@ -5,22 +5,30 @@ author: Dante Nardo
 description: Learn about my live portfolio
 ---
 
+import { Image } from "astro:assets";
+import PageSpeedInsights from "../../images/portfolio-pagespeed-insights.png";
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 import Badge from '../../components/badge/Badge.tsx';
 import BadgeList from '../../components/badge/BadgeList.tsx';
-import ArticleLink from '../../components/article/ArticleLink.tsx';
 
 # Portfolio
-
 This website acts as my online web presence, work portfolio, and resume. With great SEO, accessibility, and performance, hiring managers can quickly find all of my projects and work experience.
 
 ## Interactive Resume
-
 Clicking on any piece of my resume will take users to a detailed page on this site. And with supported browsers, I can navigate to the resume page and use browser print controls to create the PDF I use to apply for jobs. Any time I want to update my resume, I only need to update this site on GitHub and CI/CD takes care of the rest.
 
 <ArticleLink href="/resume">Try it now</ArticleLink>
 
-## Technical Details
+## Perfect Score
+PageSpeed Insights is a tool provided by Google to measure your website's performance, accessibility, and SEO. My portfolio scores a perfect score on every single page, even with animations, high resolution images, and client-side canvas graphics.
 
+<ArticleImage>
+  <Image src={PageSpeedInsights} alt="This image depicts a perfect PageSpeed insights score." />
+</ArticleImage>
+
+## Technical Details
 - Website built using <Badge>Astro</Badge> for maximum performance
 - Interactive components built with <Badge>React</Badge>, <Badge>TypeScript</Badge>, and <Badge>Tailwind CSS</Badge>
 - Pages made with <Badge>MDX</Badge> to support Markdown and <Badge>React</Badge> components
@@ -28,7 +36,6 @@ Clicking on any piece of my resume will take users to a detailed page on this si
 - Deployed to <Badge>Vercel</Badge> via <Badge>GitHub</Badge> CI/CD
 
 ## Source
-
 <ArticleLink href="https://github.com/TheDolentCity/portfolio" openInNewTab>
   Front end astro website
 </ArticleLink>
