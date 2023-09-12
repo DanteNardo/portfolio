@@ -1,13 +1,21 @@
 export default function SectionItem({
-  href,
+  href = null,
   children,
 }: {
-  href: string
-  children: React.ReactNode
+  href: string | null;
+  children: React.ReactNode;
 }) {
-  return (
-    <a href={href} className="p-2 rounded-xl action-border">
-      {children}
-    </a>
-  )
+  if (href) {
+    return (
+      <a href={href} className="p-2 rounded-xl action-border">
+        {children}
+      </a>
+    );
+  } else {
+    return (
+      <div className="p-2 rounded-xl border-2 border-transparent">
+        {children}
+      </div>
+    );
+  }
 }

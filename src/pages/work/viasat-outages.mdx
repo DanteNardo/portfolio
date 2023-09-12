@@ -2,9 +2,32 @@
 layout: ../../layouts/MarkdownLayout.astro
 title: Viasat Outages
 author: Dante Nardo
-description: TODO
+description: A description of my time working at Viasat on in-flight Wi-Fi outage detection.
 ---
 
-# Component Library
+import { Image } from "astro:assets";
+import ViasatCoverage from "../../images/viasat-ku-coverage.png";
+import Badge from '../../components/badge/Badge.tsx';
+import BadgeList from '../../components/badge/BadgeList.tsx';
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 
-TODO
+# Viasat Outage Predictions
+At Viasat, I worked on a web application to predict in-flight Wi-Fi outages and degraded quality based on a flightplan. This allowed customers to plan virtual meetings in advance and also predict when they would be unable to stream Netflix.
+
+## Computational Geometry
+In order to detect outages, I implemented a computational geometry library capable of merging polygons and tracking intersections between a polygon and a line. Outages occur when a plane enters a region with no coverage or when it enters a different satellite beam. The algorithm I developed using this library efficiently calculated the outages for any line drawn across a world map with many satellite beams, like the one below.
+
+<ArticleImage>
+  <Image src={ViasatCoverage} alt="This image depicts many polygons representing satellite coverage over a map of the world." />
+</ArticleImage>
+<ArticleCaption>A sample of what satellite coverage beams looks like</ArticleCaption>
+
+## Technical Details
+- Web app built using <Badge>Angular</Badge>, <Badge>HTML</Badge>, and <Badge>CSS</Badge>
+- API built using <Badge>Java</Badge> and <Badge>Spring Boot</Badge>
+- Computation geometry library built using <Badge>Java</Badge>
+- Data streamed from <Badge>Kafka</Badge> to <Badge>Dynamo DB</Badge>
+- Web app deployed to <Badge>AWS</Badge> via <Badge>Elastic Beanstalk</Badge>
+- Serverless microservices deployed to <Badge>AWS</Badge> using <Badge>S3</Badge>, <Badge>SQS</Badge>, and <Badge>Lambda</Badge>

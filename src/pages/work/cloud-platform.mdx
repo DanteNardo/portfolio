@@ -5,6 +5,28 @@ author: Dante Nardo
 description: Learn about my experience building Biosero's Cloud Platform.
 ---
 
-# Cloud Platform
+import { Image } from "astro:assets";
+import PackageManager from "../../images/biosero-package-manager.png";
+import Badge from '../../components/badge/Badge.tsx';
+import BadgeList from '../../components/badge/BadgeList.tsx';
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
 
-TODO
+# Cloud Platform
+When I joined Biosero I was the only full-time engineer working on their new cloud platform. This SAAS platform allows employees and customers to manage subscriptions, track licenses, and access software packages. It also serves as a base for all future cloud apps for the entire organization.
+
+## Package Manager
+Implemented Package Manager application to provide Biotech customers with our proprietary software and thousands of drivers to integrate it with their hardware. Customers and team members can easily track each version, its metadata, and even attach supporting files such as `README.txt` files.
+
+<ArticleImage>
+  <Image src={PackageManager} alt="A web app that shows a packages table and controls to sort and find packages." />
+</ArticleImage>
+<ArticleCaption>A public app for finding and downloading licensed drivers, plugins, and documentation</ArticleCaption>
+
+## Technical Details
+- Web apps built with <Badge>Blazor</Badge>, <Badge>JavaScript</Badge>, and <Badge>Tailwind CSS</Badge>
+- REST API Gateways built using <Badge>ASP.NET Core</Badge>
+- Microservices built using <Badge>gRPC</Badge> and <Badge>ASP.NET Core</Badge>
+- Distributed, multi-tenant data stored using <Badge>Event Sourcing</Badge> pattern in <Badge>Cosmos DB</Badge> an Azure <Badge>NoSQL</Badge> solution
+- Infrastructure deployed to <Badge>Azure</Badge> with <Badge>Terraform</Badge>, <Badge>Kubernetes</Badge>, <Badge>Docker</Badge> and <Badge>GitHub</Badge> CI/CD
