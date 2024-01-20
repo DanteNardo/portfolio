@@ -1,6 +1,4 @@
 import * as React from 'react';
-
-import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,6 +8,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 
 const workItems: { title: string; href: string; description: string }[] = [
   {
@@ -48,6 +47,12 @@ const projectItems: { title: string; href: string; description: string }[] = [
     href: '/projects/portfolio',
     description:
       'Built this portfolio site from the ground up for user experience',
+  },
+  {
+    title: 'Cerberus',
+    href: '/projects/cerberus',
+    description:
+      'A microservice that polls RSS feeds and sends new posts to discord users',
   },
 ];
 
