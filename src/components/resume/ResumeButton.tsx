@@ -1,10 +1,10 @@
-import { FileText, Download } from 'lucide-react';
+import { Download, FileText } from 'lucide-react';
 
 export default function ResumeButton() {
   return (
     <div className="flex gap-px rounded text-black bg-black">
       <a
-        href="/resume"
+        href="/"
         title="Interactive resume"
         className="flex gap-2 px-3 py-2 items-center rounded-l bg-white hover:bg-base-300 active:bg-base-400 mst"
       >

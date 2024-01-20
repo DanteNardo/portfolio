@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+title: Dante | Cerberus Project
+author: Dante Nardo
+description: Learn about my cerberus microservice
+---
+
+import { Image } from "astro:assets";
+import ArticleCaption from '../../components/article/ArticleCaption.tsx';
+import ArticleImage from '../../components/article/ArticleImage.astro';
+import ArticleLink from '../../components/article/ArticleLink.tsx';
+import Badge from '../../components/badge/Badge.tsx';
+import BadgeList from '../../components/badge/BadgeList.tsx';
+import CerberusFeedsContainers from "../../images/cerberus-feeds-containers.png";
+import CerberusDiscordSample from "../../images/cerberus-discord-sample.png";
+
+# Cerberus
+Cerberus is a serverless microservice that polls a list of RSS/ATOM feeds for new entries and posts them to users via Discord. The code is hosted on Upstash and Deno Deploy. A CLI is used by an admin to manage the feed configuration.
+
+---
+
+<ArticleImage>
+  <Image src={CerberusDiscordSample} alt="This image depicts a Discord message from the Cerberus system." />
+</ArticleImage>
+<ArticleCaption>A sample Cerberus post</ArticleCaption>
+
+## Architecture
+The full source of the CLI and web server are hosted on GitHub. I created several C4 diagrams to describe the system and container level context for the microservice. The entire service is serverless and hosted for free due to a low polling rate.
+
+<ArticleImage>
+  <Image src={CerberusFeedsContainers} alt="This image depicts a container level diagram for the cerberus feeds system." />
+</ArticleImage>
+<ArticleCaption>A container level diagram for the Cerberus feeds system</ArticleCaption>
+
+For more details about the architecture or to see how easy it is to setup the microservice for yourself, check out the following links:
+
+<ArticleLink href="https://github.com/TheDolentCity/cerberus/blob/main/README.md" openInNewTab>Setup guide</ArticleLink>
+<ArticleLink href="https://github.com/TheDolentCity/cerberus/blob/main/docs/architecture.md" openInNewTab>Architecture diagrams</ArticleLink>
+
+## Technical Details
+- Web server and CLI built using <Badge>TypeScript</Badge> and <Badge>Deno</Badge>
+- Feeds cached in serverless <Badge>Redis</Badge> using <Badge>Upstash</Badge>
+- Function triggered by <Badge>CRON</Badge> job using <Badge>QStash</Badge> message queue
+- Deployed to <Badge>Deno Deploy</Badge> via <Badge>GitHub</Badge> CI/CD
+
+## Source
+<ArticleLink href="https://github.com/TheDolentCity/cerberus" openInNewTab>
+  Web Server + CLI
+</ArticleLink>
